@@ -8,6 +8,112 @@ import openpyxl
 from openpyxl import load_workbook
 from pathlib import Path
 
+def create_scoped_target_name(sheet, row_idx, field_name):
+    """Create a fully scoped target field name with context."""
+    
+    # Look for section headers above the current row
+    section_context = []
+    
+    # Check previous rows for section headers (look back up to 20 rows)
+    for check_row in range(max(1, row_idx - 20), row_idx):
+        cell_value = sheet.cell(check_row, 1).value
+        
+        if cell_value and isinstance(cell_value, str):
+            cell_text = cell_value.strip()
+            
+            # Skip empty rows and formula references
+            if not cell_text or cell_text.startswith('='):
+                continue
+                
+            # Identify section headers (typically all caps or descriptive)
+            if (cell_text.isupper() or 
+                'STATEMENTS' in cell_text.upper() or
+                'Information' in cell_text or
+                'breakdown' in cell_text.lower() or
+                len(cell_text.split()) > 3):  # Multi-word descriptions
+                
+                # Clean up section name
+                clean_section = cell_text.replace('(', '').replace(')', '').replace("'", "").strip()
+                section_context.append(clean_section)
+    
+    # Keep only the most recent 2 section contexts
+    section_context = section_context[-2:]
+    
+    # Build scoped name
+    if section_context:
+        scoped_name = "Reported." + ".".join(section_context) + "." + field_name
+    else:
+        scoped_name = "Reported." + field_name
+    
+    return scoped_name
+
+
+def create_scoped_source_name(sheet_name, field_name):
+    """Create a fully scoped source field name with sheet context."""
+    
+    if not field_name:
+        return ""
+    
+    # Map sheet names to cleaner versions
+    sheet_mapping = {
+        "Income Statement": "IncomeStatement",
+        "Balance Sheet": "BalanceSheet", 
+        "Cash Flows": "CashFlows",
+        "Key Metrics": "KeyMetrics"
+    }
+    
+    clean_sheet = sheet_mapping.get(sheet_name, sheet_name.replace(" ", ""))
+    
+    # For Key Metrics, try to infer the section based on field name
+    if sheet_name == "Key Metrics":
+        if any(region in field_name for region in ["North America", "Germany", "China", "Japan", "Europe", "Asia", "World"]):
+            return f"{clean_sheet}.RevenueByRegion.{field_name}"
+        elif any(app in field_name for app in ["Materials", "processing", "application"]):
+            return f"{clean_sheet}.RevenueByApplication.{field_name}"
+        elif any(laser in field_name for laser in ["CW", "Pulsed", "QCW", "Systems", "laser"]):
+            return f"{clean_sheet}.RevenueByProduct.{field_name}"
+        else:
+            return f"{clean_sheet}.{field_name}"
+    
+    # For Income Statement, add more specific context
+    elif sheet_name == "Income Statement":
+        if any(term in field_name.lower() for term in ["sales", "revenue"]):
+            return f"{clean_sheet}.Revenue.{field_name}"
+        elif any(term in field_name.lower() for term in ["cost", "expense"]):
+            return f"{clean_sheet}.Expenses.{field_name}"
+        elif any(term in field_name.lower() for term in ["income", "profit", "margin"]):
+            return f"{clean_sheet}.Profitability.{field_name}"
+        elif any(term in field_name.lower() for term in ["shares", "earnings per share", "basic", "diluted"]):
+            return f"{clean_sheet}.ShareData.{field_name}"
+        else:
+            return f"{clean_sheet}.{field_name}"
+    
+    # For Balance Sheet, add asset/liability context
+    elif sheet_name == "Balance Sheet":
+        if any(term in field_name.lower() for term in ["cash", "investment", "receivable", "inventory", "asset"]):
+            return f"{clean_sheet}.Assets.{field_name}"
+        elif any(term in field_name.lower() for term in ["payable", "liability", "debt"]):
+            return f"{clean_sheet}.Liabilities.{field_name}"
+        elif any(term in field_name.lower() for term in ["equity", "stock", "earnings", "retained"]):
+            return f"{clean_sheet}.Equity.{field_name}"
+        else:
+            return f"{clean_sheet}.{field_name}"
+    
+    # For Cash Flows, add activity context
+    elif sheet_name == "Cash Flows":
+        if any(term in field_name.lower() for term in ["depreciation", "provision", "working capital", "receivable", "inventory", "payable"]):
+            return f"{clean_sheet}.OperatingActivities.{field_name}"
+        elif any(term in field_name.lower() for term in ["purchase", "property", "investment", "equipment", "capex"]):
+            return f"{clean_sheet}.InvestingActivities.{field_name}"
+        elif any(term in field_name.lower() for term in ["stock", "dividend", "debt", "financing"]):
+            return f"{clean_sheet}.FinancingActivities.{field_name}"
+        else:
+            return f"{clean_sheet}.{field_name}"
+    
+    # Default: just use sheet name
+    return f"{clean_sheet}.{field_name}"
+
+
 def populate_data():
     """
     Extract data from IPGP-Financial-Data-Workbook-2024-Q2.xlsx 
@@ -353,8 +459,8 @@ def populate_data():
     verification_file = target_file.parent / "verification_report.csv"
     
     with open(verification_file, 'w', encoding='utf-8') as f:
-        # Write header
-        f.write("Row,Target Field Name,Source Sheet,Source Field Name,Q1 Target,Q1 Source,Q2 Target (Populated),Match Status\n")
+        # Write header with scoped field names
+        f.write("Row,Target Field Name (Scoped),Source Sheet,Source Field Name (Scoped),Q1 Target,Q1 Source,Q2 Target (Populated),Match Status\n")
         
         # Track all processed rows
         processed_rows = {}
@@ -423,9 +529,16 @@ def populate_data():
                     if found_match:
                         break
             
+            # Create fully scoped field names
+            # Target: Include context from surrounding rows if available
+            target_scoped_name = create_scoped_target_name(reported_sheet, target_row_idx, label)
+            
+            # Source: Include sheet name and section context
+            source_scoped_name = create_scoped_source_name(match_sheet, match_label) if match_label else ""
+            
             # Escape commas and quotes in labels for CSV
-            label_clean = label.replace('"', '""')
-            match_label_clean = match_label.replace('"', '""') if match_label else ""
+            target_clean = target_scoped_name.replace('"', '""')
+            source_clean = source_scoped_name.replace('"', '""')
             
             # Format values for CSV
             q1_src_str = str(q1_source) if q1_source != "" else ""
@@ -433,7 +546,7 @@ def populate_data():
             q2_tgt_str = str(q2_value_target) if q2_value_target is not None else ""
             
             # Write to CSV
-            f.write(f'{target_row_idx},"{label_clean}","{match_sheet}","{match_label_clean}",{q1_value_target},{q1_src_str},{q2_tgt_str},"{match_status}"\n')
+            f.write(f'{target_row_idx},"{target_clean}","{match_sheet}","{source_clean}",{q1_value_target},{q1_src_str},{q2_tgt_str},"{match_status}"\n')
             
             processed_rows[target_row_idx] = True
     

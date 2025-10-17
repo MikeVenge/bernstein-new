@@ -65,7 +65,7 @@ Row,Target Field Name,Source Sheet,Source Field Name,Q1 Target,Q1 Source,Q2 Targ
 156,Total equity and liabillities,Balance Sheet,Total assets,2598436,2598436.0,2495431,MATCHED,2495431
 171,Net income,Income Statement,Net income (loss),24099,24099.0,20154,MATCHED,20154
 173,Depreciation and amortization,Cash Flows,Depreciation and amortization,16214,16214.0,15292,MATCHED,15292
-177,Other,,,143,,,NOT FOUND,194
+177,Other,,,143,,,NOT FOUND,-8
 178,"Provisions for inventory, warranty and bad debt",Cash Flows,"Provisions for inventory, warranty & bad debt",14761,14761.0,15604,MATCHED,30365
 180,Accounts receivable,,,32579,,,NOT FOUND,176153
 181,Inventories,Cash Flows,Inventories,1498,1498.0,15543,MATCHED,400839
@@ -75,15 +75,15 @@ Row,Target Field Name,Source Sheet,Source Field Name,Q1 Target,Q1 Source,Q2 Targ
 192,"Proceeds from sales of property, plant and equipment",Cash Flows,"Proceeds from sales of property, plant and equipment",25262,25262.0,3012,MATCHED,28274
 193,Proceeds from short-term investments,Cash Flows,Purchases of short-term investments,-226521,-226521.0,-75020,MATCHED,633993
 194,Purchases of short-term investments,Cash Flows,Proceeds from short-term investments,252890,252890.0,381103,MATCHED,301541
-196,Others,Cash Flows,Other,157,157.0,31,MATCHED,33777
+196,Others,Cash Flows,Other,157,157.0,31,MATCHED,188
 197,Net cash used in investing activities,Cash Flows,Net cash (used in) provided by investing activities,23736,23736.0,284908,MATCHED,284908
-206,Exercise of employee stock options and issuances under employee stock purchase plan,Cash Flows,Exercise of employee stock options and issuances under employee stock purchase plan,-1158,-1158.0,2950,MATCHED,30
-207,Tax benefit from exercise of employee stock options,Cash Flows,"Purchase of treasury stock, at cost",-89616,-89616.0,-122404,MATCHED,-244
+206,Exercise of employee stock options and issuances under employee stock purchase plan,Cash Flows,Exercise of employee stock options and issuances under employee stock purchase plan,-1158,-1158.0,2950,MATCHED,2950
+207,Tax benefit from exercise of employee stock options,Cash Flows,"Purchase of treasury stock, at cost",-89616,-89616.0,-122404,MATCHED,ERROR
 212,Net cash provided by financing activities,Cash Flows,Net cash (used in) provided by financing activities,-90774,-90774.0,-119454,MATCHED,-119454
-214,Effect of changes in exchange rates on cash and cash equivalents,Cash Flows,"Effect of changes in exchange rates on cash, cash equivalents and restricted cash",-5780,-5780.0,5176,MATCHED,5176
-215,Net increase in cash and cash equivalents,Cash Flows,"Net increase (decrease) in cash, cash equivalents and restricted cash",-18222,-18222.0,224088,MATCHED,224088
-216,Cash and cash equivalents - Beginning of period,Cash Flows,Cash and cash equivalents — Beginning of period,514674,514674.0,496452,MATCHED,496452
+214,Effect of changes in exchange rates on cash and cash equivalents,Cash Flows,"Effect of changes in exchange rates on cash, cash equivalents and restricted cash",-5780,-5780.0,5176,MATCHED,-604
+215,Net increase in cash and cash equivalents,Cash Flows,"Net increase (decrease) in cash, cash equivalents and restricted cash",-18222,-18222.0,224088,MATCHED,205866
+216,Cash and cash equivalents - Beginning of period,Cash Flows,Cash and cash equivalents — Beginning of period,514674,514674.0,496452,MATCHED,514674
 217,Cash and cash equivalents - Ending balance,Balance Sheet,Cash and cash equivalents,496452,496452.0,720540,MATCHED,720540
 219,Cash and cash equivalents - End of period,Balance Sheet,Cash and cash equivalents,496452,496452.0,720540,MATCHED,720540
-221,Cash paid for interest,Cash Flows,Cash paid for interest,4,4.0,90,MATCHED,30
-222,Cash paid for income taxes,Cash Flows,Cash paid for income taxes,8005,8005.0,26160,MATCHED,30
+221,Cash paid for interest,Cash Flows,Cash paid for interest,4,4.0,90,MATCHED,94
+222,Cash paid for income taxes,Cash Flows,Cash paid for income taxes,8005,8005.0,26160,MATCHED,34165
