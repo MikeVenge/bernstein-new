@@ -1,0 +1,200 @@
+Dest_Row_Number,Dest_Field_Name,Dest_Enhanced_Scope,Source_Row_Number,Source_Field_Name,Source_Enhanced_Scope,Source_Q1_2024_Value,Dest_Q1_2024_Value,Source_Q2_2024_Value,Confidence_Score,Match_Reason,Values_Match,Has_Source_Match
+11,Region breakdown,Reported.Segment_Information_In_000_Usd_Ytd.Region_Breakdown,,,,,,,0.0,No suitable source field found,No Match,No
+12,United States and other North America,Financial_Statements.Geographic_Data.North_America,6,North America,Revenue_Statement.Geographic_Breakdown.North_America,63964.0,63964,76905.0,0.9,Geographic match for North America,Exact Match,Yes
+13,Germany,Financial_Statements.Geographic_Data.Germany,7,Germany,Revenue_Statement.Geographic_Breakdown.Germany,20019.0,20019,20809.0,0.9,Geographic match for Germany,Exact Match,Yes
+14,Other including Eastern Europe/CIS,Reported.Segment_Information_In_000_Usd_Ytd.Other_Including_Eastern_Europecis,8,Other Europe,Revenue_Statement.Geographic_Breakdown.Other_Europe,59497.0,59497,53722.0,0.9,Geographic match for Other Europe,Exact Match,Yes
+15,China,Financial_Statements.Geographic_Data.China,9,China,Revenue_Statement.Geographic_Breakdown.China,62730.0,62730,64875.0,0.9,Geographic match for China,Exact Match,Yes
+16,Japan,Financial_Statements.Geographic_Data.Japan,10,Japan,Revenue_Statement.Geographic_Breakdown.Japan,16698.0,16698,10215.0,0.9,Geographic match for Japan,Exact Match,Yes
+17,Other Asian countries,Financial_Statements.Geographic_Data.Other_Asia,11,Other Asia,Revenue_Statement.Geographic_Breakdown.Other_Asia,24978.0,24978,27643.0,0.9,Geographic match for Other Asia,Exact Match,Yes
+18,Rest of World,Financial_Statements.Geographic_Data.Rest_Of_World,12,Rest of World,Revenue_Statement.Geographic_Breakdown.Rest_Of_World,4123.0,4123,3476.0,0.9,Geographic match for Rest of World,Exact Match,Yes
+19,Total,Income_Statement.Totals.Total,13,Total revenue,Revenue_Statement.Totals.Total_Revenue,252009.0,252009,257645.0,0.9,Total revenue match,Exact Match,Yes
+22,Materials Processing,Reported.Segment_Information_In_000_Usd_Ytd.End_Market_Breakdown.Materials_Processing,26,Materials processing,Revenue_Statement.Application_Breakdown.Materials_Processing,226365.0,226365,225773.0,0.9,Application match for Materials Processing,Exact Match,Yes
+24,Advanced Applications,Reported.Segment_Information_In_000_Usd_Ytd.End_Market_Breakdown.Other_Application_Of_Which.Advanced_Applications,28,Advanced applications,Revenue_Statement.Application_Breakdown.Advanced_Applications,,,,0.9,Application match for Advanced Applications,Both Empty,Yes
+25,Communications,Revenue_Statement.Application_Breakdown.Communications,29,Communications,Revenue_Statement.Application_Breakdown.Communications,,,,0.9,Application match for Communications,Both Empty,Yes
+26,Medical,Revenue_Statement.Application_Breakdown.Medical,30,Medical,Revenue_Statement.Application_Breakdown.Medical,,,,0.9,Application match for Medical,Both Empty,Yes
+27,Total,Income_Statement.Totals.Total,31,Total revenue,Revenue_Statement.Totals.Total_Revenue,252009.0,252009,257645.0,0.9,Total revenue match,Exact Match,Yes
+30,High-power CW lasers (1 Kilowatt or Greater),Reported.Segment_Information_In_000_Usd_Ytd.Segment_Breakdown.High_Power_Cw_Lasers_1_Kilowatt_Or_Greater,46,High-power CW lasers (1 Kilowatt or Greater),Revenue_Statement.Product_Breakdown.High_Power_Cw_Lasers_1_Kilowatt_Or_Greater,90793.0,90793,82225.0,0.9,Product match for High-power CW lasers,Exact Match,Yes
+31,Medium-power CW lasers (Less Than 1 Kilowatt),Reported.Segment_Information_In_000_Usd_Ytd.Segment_Breakdown.Medium_Power_Cw_Lasers_Less_Than_1_Kilowatt,47,Medium-power CW lasers (Less Than 1 Kilowatt),Revenue_Statement.Product_Breakdown.Medium_Power_Cw_Lasers_Less_Than_1_Kilowatt,16214.0,16214,15758.0,0.9,Product match for Medium-power CW lasers,Exact Match,Yes
+32,Pulsed lasers,Reported.Segment_Information_In_000_Usd_Ytd.Segment_Breakdown.Pulsed_Lasers,48,Pulsed lasers,Revenue_Statement.Product_Breakdown.Pulsed_Lasers,34819.0,34819,42536.0,0.9,Product match for Pulsed lasers,Exact Match,Yes
+33,QCW lasers,Reported.Segment_Information_In_000_Usd_Ytd.Segment_Breakdown.Qcw_Lasers,49,QCW lasers,Revenue_Statement.Product_Breakdown.Qcw_Lasers,15791.0,15791,10549.0,0.9,Product match for QCW lasers,Exact Match,Yes
+34,Systems,Revenue_Statement.Product_Type_Breakdown.Systems_And_Other,50,Laser and Non-Laser Systems,Revenue_Statement.Product_Breakdown.Laser_And_Non_Laser_Systems,37503.0,37503,38668.0,0.9,Product match for Systems,Exact Match,Yes
+35,"Other revenue (amplifiers, service, parts, accessories and change in deferred)",Income_Statement.Revenue.Other_Revenue_Amplifiers_Service_Parts_Accessories_And_Change_In_Deferred,51,"Other revenue (amplifiers, service, parts, accessories and change in deferred)",Operations.Employee_Metrics.Other_Revenue_Amplifiers_Service_Parts_Accessories_And_Change_In_Deferred,56889.0,56889,67909.0,0.9,Product match for Other revenue,Exact Match,Yes
+36,Total,Income_Statement.Totals.Total,52,Total revenue,Revenue_Statement.Totals.Total_Revenue,252009.0,252009,257645.0,0.9,Total revenue match,Exact Match,Yes
+39,Check,Reported.Segment_Information_In_000_Usd_Ytd.Segment_Breakdown.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+40,Check,Reported.Segment_Information_In_000_Usd_Ytd.Segment_Breakdown.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+41,Check,Reported.Segment_Information_In_000_Usd_Ytd.Segment_Breakdown.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+42,Check,Reported.Segment_Information_In_000_Usd_Ytd.Segment_Breakdown.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+47,Region mix (%),Reported.Segment_Information.Region_Mix,,,,,,,0.0,No suitable source field found,No Match,No
+48,United States and other North America,Financial_Statements.Geographic_Data.North_America,16,North America,Revenue_Statement.Geographic_Breakdown_Percent.North_America,0.2538163319563983,0.25381633195639836,0.2984921112383318,0.9,Geographic percentage match for North America,Close Match,Yes
+49,Germany,Financial_Statements.Geographic_Data.Germany,17,Germany,Revenue_Statement.Geographic_Breakdown_Percent.Germany,0.0794376391319357,0.07943763913193576,0.0807661705059287,0.9,Geographic percentage match for Germany,Close Match,Yes
+50,Other including Eastern Europe/CIS,Reported.Segment_Information.Other_Including_Eastern_Europecis,18,Other Europe,Revenue_Statement.Geographic_Breakdown_Percent.Other_Europe,0.23609077453583,0.23609077453583008,0.2085117118515787,0.9,Geographic percentage match for Other Europe,Close Match,Yes
+51,China,Financial_Statements.Geographic_Data.China,19,China,Revenue_Statement.Geographic_Breakdown_Percent.China,0.2489196814399485,0.24891968143994858,0.2517999573055949,0.9,Geographic percentage match for China,Close Match,Yes
+52,Japan,Financial_Statements.Geographic_Data.Japan,20,Japan,Revenue_Statement.Geographic_Breakdown_Percent.Japan,0.0662595383498208,0.06625953834982085,0.039647577092511,0.9,Geographic percentage match for Japan,Close Match,Yes
+53,Other Asian countries,Financial_Statements.Geographic_Data.Other_Asia,21,Other Asia,Revenue_Statement.Geographic_Breakdown_Percent.Other_Asia,0.099115507779484,0.09911550777948407,0.1072910399968949,0.9,Geographic percentage match for Other Asia,Close Match,Yes
+54,Rest of World,Financial_Statements.Geographic_Data.Rest_Of_World,22,Rest of World,Revenue_Statement.Geographic_Breakdown_Percent.Rest_Of_World,0.0163605268065823,0.016360526806582305,0.0134914320091598,0.9,Geographic percentage match for Rest of World,Close Match,Yes
+55,Total,Income_Statement.Totals.Total,23,Total revenue,Revenue_Statement.Totals_Percent.Total_Revenue,1.0,1,1.0,0.9,Total revenue percentage match,Exact Match,Yes
+57,End market mix (%),Reported.Segment_Information.End_Market_Mix,,,,,,,0.0,No suitable source field found,No Match,No
+58,Materials Processing,Reported.Segment_Information.Materials_Processing,34,Materials processing,Revenue_Statement.Application_Breakdown_Percent.Materials_Processing,0.8982417294620431,0.8982417294620431,0.876294901899901,0.9,Application percentage match for Materials Processing,Exact Match,Yes
+60,Advanced Applications,Reported.Segment_Information.Other_Application_Of_Which.Advanced_Applications,40,Advanced applications,Revenue_Statement.Application_Breakdown_Percent.Advanced_Applications,,,,0.9,Application percentage match for Advanced Applications,Both Empty,Yes
+61,Communications,Revenue_Statement.Application_Breakdown.Communications,41,Communications,Revenue_Statement.Application_Breakdown_Percent.Communications,,,,0.9,Application percentage match for Communications,Both Empty,Yes
+62,Medical,Revenue_Statement.Application_Breakdown.Medical,42,Medical,Revenue_Statement.Application_Breakdown_Percent.Medical,,,,0.9,Application percentage match for Medical,Both Empty,Yes
+63,Total,Income_Statement.Totals.Total,43,Total revenue,Revenue_Statement.Totals_Percent.Total_Revenue,1.0,1,1.0,0.9,Total revenue percentage match,Exact Match,Yes
+65,Segment mix (%),Reported.Segment_Information.Other_Application_Of_Which.Segment_Mix,,,,,,,0.0,No suitable source field found,No Match,No
+66,High-power CW lasers (1 Kilowatt or Greater),Reported.Segment_Information.Other_Application_Of_Which.High_Power_Cw_Lasers_1_Kilowatt_Or_Greater,55,High-power CW lasers (1 Kilowatt or Greater),Revenue_Statement.Product_Breakdown.High_Power_Cw_Lasers_1_Kilowatt_Or_Greater,0.3602768155105572,0.3602768155105572,0.3191406780647791,0.9,Product match for High-power CW lasers,Exact Match,Yes
+67,Medium-power CW lasers (Less Than 1 Kilowatt),Reported.Segment_Information.Other_Application_Of_Which.Medium_Power_Cw_Lasers_Less_Than_1_Kilowatt,56,Medium-power CW lasers (Less Than 1 Kilowatt),Revenue_Statement.Product_Breakdown.Medium_Power_Cw_Lasers_Less_Than_1_Kilowatt,0.0643389720208405,0.06433897202084053,0.0611616759494653,0.9,Product match for Medium-power CW lasers,Close Match,Yes
+68,Pulsed lasers,Reported.Segment_Information.Other_Application_Of_Which.Pulsed_Lasers,57,Pulsed lasers,Revenue_Statement.Product_Breakdown.Pulsed_Lasers,0.1381657004313338,0.1381657004313338,0.1650953831822857,0.9,Product match for Pulsed lasers,Exact Match,Yes
+69,QCW lasers,Reported.Segment_Information.Other_Application_Of_Which.Qcw_Lasers,58,QCW lasers,Revenue_Statement.Product_Breakdown.Qcw_Lasers,0.0626604605391077,0.06266046053910773,0.0409439344834947,0.9,Product match for QCW lasers,Close Match,Yes
+70,Systems,Revenue_Statement.Product_Type_Breakdown.Systems_And_Other,59,Laser and Non-Laser Systems,Revenue_Statement.Product_Breakdown.Laser_And_Non_Laser_Systems,0.1488161137102246,0.14881611371022463,0.1500824778280191,0.9,Product match for Systems,Close Match,Yes
+71,"Other revenue (amplifiers, service, parts, accessories and change in deferred)",Income_Statement.Revenue.Other_Revenue_Amplifiers_Service_Parts_Accessories_And_Change_In_Deferred,60,"Other revenue (amplifiers, service, parts, accessories and change in deferred)",Operations.Employee_Metrics.Other_Revenue_Amplifiers_Service_Parts_Accessories_And_Change_In_Deferred,0.2257419377879361,0.22574193778793614,0.263575850491956,0.9,Product match for Other revenue,Close Match,Yes
+72,Total,Income_Statement.Totals.Total,61,Total revenue,Revenue_Statement.Totals.Total_Revenue,1.0,1,1.0,0.9,Total revenue match,Exact Match,Yes
+79,Net Sales,Income_Statement.Revenue.Net_Sales,,,,,252009,,0.0,No suitable source field found,No Match,No
+80,Cost of sales,Income_Statement.Revenue.Cost_Of_Sales,,,,,154473,,0.0,No suitable source field found,No Match,No
+81,Gross profit,Income_Statement.Profitability.Gross_Profit,72,Gross profit,Key_Metrics.Revenue_By_Product.Gross_Profit,-4695.0,97536,-2834.0,0.9,Profit match for Gross profit,Close Match,Yes
+82,Sales and marketing,Income_Statement.Revenue.Sales_And_Marketing,,,,,22998,,0.0,No suitable source field found,No Match,No
+83,Research and development,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.Research_And_Development,96,Research and development,Operations.Employee_Metrics.Research_And_Development,,29381,,0.9,Employee match for Research and development,One Empty,Yes
+84,General and administrative,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.General_And_Administrative,99,General and administrative,Key_Metrics.Long_Lived_Assets_By_Region_Of_Total.General_And_Administrative,,31158,,0.9,Employee match for General and administrative,One Empty,Yes
+85,Loss (gain) on foreign exchange and others,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.Loss_Gain_On_Foreign_Exchange_And_Others,70,Foreign exchange impact on results (1),Key_Metrics.Revenue_By_Product.Foreign_Exchange_Impact_On_Results_1,,-5101,,0.9,Foreign exchange impact match,One Empty,Yes
+86,Total operating expenses,Income_Statement.Expenses.Total_Operating_Expenses,,,,,78436,,0.0,No suitable source field found,No Match,No
+87,Operating Income,Income_Statement.Profitability.Operating_Income,80,Operating profit,Key_Metrics.Revenue_By_Product.Operating_Profit,21896.0,19100,13568.0,0.9,Profit match for Operating Income,Different,Yes
+88,"Interest income (expense), net",Income_Statement.Expenses.Interest_Income_Expense_Net,,,,,14177,,0.0,No suitable source field found,No Match,No
+89,"Other income (expense), net",Income_Statement.Expenses.Other_Income_Expense_Net,,,,,325,,0.0,No suitable source field found,No Match,No
+90,"Total other income (expense), net",Income_Statement.Expenses.Total_Other_Income_Expense_Net,,,,,14502,,0.0,No suitable source field found,No Match,No
+91,Income before provision for income taxes,Income_Statement.Profitability.Income_Before_Provision_For_Income_Taxes,,,,,33602,,0.0,No suitable source field found,No Match,No
+92,Provision for income taxes,Income_Statement.Profitability.Provision_For_Income_Taxes,,,,,-9503,,0.0,No suitable source field found,No Match,No
+93,Net income,Income_Statement.Profitability.Net_Income,93,Total long-lived assets by region,Balance_Sheet.Asset_Totals.Total_Long_Lived_Assets_By_Region,,24099,,0.9,Net income match,One Empty,Yes
+94,Less: Net loss attributable to noncontrolling interests,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.Less_Net_Loss_Attributable_To_Noncontrolling_Interests,,,,,,,0.0,No suitable source field found,No Match,No
+95,Net income attributable to IPG Photonics Corporation,Income_Statement.Profitability.Net_Income_Attributable_To_Ipg_Photonics_Corporation,,,,,24099,,0.0,No suitable source field found,No Match,No
+96,Net income attributable to IPG Photonics Corporation per share,Income_Statement.Profitability.Net_Income_Attributable_To_Ipg_Photonics_Corporation_Per_Share,,,,,,,0.0,No suitable source field found,No Match,No
+97,Basic,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.Basic,,,,,0.52,,0.0,No suitable source field found,No Match,No
+98,Diluted,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.Diluted,,,,,0.52,,0.0,No suitable source field found,No Match,No
+99,Weighted average share outstanding,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.Weighted_Average_Share_Outstanding,,,,,,,0.0,No suitable source field found,No Match,No
+100,Basic,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.Basic,,,,,45960,,0.0,No suitable source field found,No Match,No
+101,Diluted,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.Diluted,,,,,46175,,0.0,No suitable source field found,No Match,No
+103,Net income,Income_Statement.Profitability.Net_Income,93,Total long-lived assets by region,Balance_Sheet.Asset_Totals.Total_Long_Lived_Assets_By_Region,,,,0.9,Net income match,Both Empty,Yes
+104,Translation adjustments,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.Translation_Adjustments,,,,,,,0.0,No suitable source field found,No Match,No
+105,Change in carrying value of auction rate securities,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.Change_In_Carrying_Value_Of_Auction_Rate_Securities,,,,,,,0.0,No suitable source field found,No Match,No
+106,Unrealized gain on derivatives,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.Unrealized_Gain_On_Derivatives,,,,,,,0.0,No suitable source field found,No Match,No
+107,Unrealized loss on available-for-sale investments,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.Unrealized_Loss_On_Available_For_Sale_Investments,,,,,,,0.0,No suitable source field found,No Match,No
+108,"Total other comprehensive income (loss), net of tax",Income_Statement.Profitability.Total_Other_Comprehensive_Income_Loss_Net_Of_Tax,,,,,,,0.0,No suitable source field found,No Match,No
+109,Comprehensive income,Income_Statement.Profitability.Comprehensive_Income,,,,,,,0.0,No suitable source field found,No Match,No
+110,Comprehensive (loss) income attributable to noncontrolling interest,Income_Statement.Profitability.Comprehensive_Loss_Income_Attributable_To_Noncontrolling_Interest,,,,,,,0.0,No suitable source field found,No Match,No
+111,Comprehensive income attributable to IPG Photonics Corporation,Income_Statement.Profitability.Comprehensive_Income_Attributable_To_Ipg_Photonics_Corporation,,,,,,,0.0,No suitable source field found,No Match,No
+113,Check,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+114,Check,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+115,Check,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+116,Check,Reported.Consolidated_Income_Statement_In_000_Usd_Ytd.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+123,Cash and cash equivalents,Balance_Sheet.Assets.Cash_And_Cash_Equivalents,,,,,496452,,0.0,No suitable source field found,No Match,No
+124,Short-term investments,Reported.Consolidated_Balance_Sheet_In_000_Usd.Short_Term_Investments,,,,,643655,,0.0,No suitable source field found,No Match,No
+125,"Accounts receivable, net",Balance_Sheet.Assets.Accounts_Receivable_Net,,,,,184012,,0.0,No suitable source field found,No Match,No
+126,Inventories,Reported.Consolidated_Balance_Sheet_In_000_Usd.Inventories,,,,,431899,,0.0,No suitable source field found,No Match,No
+127,Prepaid income taxes,Reported.Consolidated_Balance_Sheet_In_000_Usd.Prepaid_Income_Taxes,,,,,24530,,0.0,No suitable source field found,No Match,No
+128,Prepaid expenses and others,Reported.Consolidated_Balance_Sheet_In_000_Usd.Prepaid_Expenses_And_Others,,,,,49071,,0.0,No suitable source field found,No Match,No
+131,"Deferred income taxes, net",Reported.Consolidated_Balance_Sheet_In_000_Usd.Total_Current_Assets.Deferred_Income_Taxes_Net,,,,,84452,,0.0,No suitable source field found,No Match,No
+132,Goodwill,Reported.Consolidated_Balance_Sheet_In_000_Usd.Total_Current_Assets.Goodwill,,,,,38351,,0.0,No suitable source field found,No Match,No
+133,"Intangible assets, net",Balance_Sheet.Assets.Intangible_Assets_Net,,,,,24802,,0.0,No suitable source field found,No Match,No
+134,"Property, plant and equipment, net",Reported.Consolidated_Balance_Sheet_In_000_Usd.Total_Current_Assets.Property_Plant_And_Equipment_Net,,,,,585751,,0.0,No suitable source field found,No Match,No
+136,Total assets,Balance_Sheet.Assets.Total_Assets,,,,,2598436,,0.0,No suitable source field found,No Match,No
+138,Current portion of long-term debt,Balance_Sheet.Liabilities.Current_Portion_Of_Long_Term_Debt,,,,,,,0.0,No suitable source field found,No Match,No
+139,Accounts payable,Balance_Sheet.Liabilities.Accounts_Payable,,,,,26675,,0.0,No suitable source field found,No Match,No
+140,Accrued expenses and other liabilities,Reported.Consolidated_Balance_Sheet_In_000_Usd.Other_Non_Current_Assets.Accrued_Expenses_And_Other_Liabilities,,,,,163011,,0.0,No suitable source field found,No Match,No
+141,Income taxes payable,Balance_Sheet.Liabilities.Income_Taxes_Payable,,,,,2441,,0.0,No suitable source field found,No Match,No
+145,"Long-term debt, net of current portion",Balance_Sheet.Liabilities.Long_Term_Debt_Net_Of_Current_Portion,,,,,,,0.0,No suitable source field found,No Match,No
+146,Total liabilities,Financial_Statements.Totals.Total_Liabilities,,,,,257716,,0.0,No suitable source field found,No Match,No
+149,"Treasury stock, at cost",Reported.Consolidated_Balance_Sheet_In_000_Usd.Deferred_Income_Taxes_And_Other_Non_Current_Liabilities.Treasury_Stock_At_Cost,,,,,-1251121,,0.0,No suitable source field found,No Match,No
+150,Additional paid-in capital,Balance_Sheet.Equity.Additional_Paid_In_Capital,,,,,1002600,,0.0,No suitable source field found,No Match,No
+151,Retained earnings,Balance_Sheet.Equity.Retained_Earnings,,,,,2819493,,0.0,No suitable source field found,No Match,No
+152,Accumulated other comprehensive loss,Reported.Consolidated_Balance_Sheet_In_000_Usd.Deferred_Income_Taxes_And_Other_Non_Current_Liabilities.Accumulated_Other_Comprehensive_Loss,,,,,-230258,,0.0,No suitable source field found,No Match,No
+154,Noncontrolling interests,Reported.Consolidated_Balance_Sheet_In_000_Usd.Total_Ipg_Photonics_Corporation_Equity.Noncontrolling_Interests,,,,,,,0.0,No suitable source field found,No Match,No
+158,Check,Reported.Consolidated_Balance_Sheet_In_000_Usd.Total_Equity_And_Liabillities.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+159,Check,Reported.Consolidated_Balance_Sheet_In_000_Usd.Total_Equity_And_Liabillities.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+160,Check,Reported.Consolidated_Balance_Sheet_In_000_Usd.Total_Equity_And_Liabillities.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+161,Check,Reported.Consolidated_Balance_Sheet_In_000_Usd.Total_Equity_And_Liabillities.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+162,Check,Reported.Consolidated_Balance_Sheet_In_000_Usd.Total_Equity_And_Liabillities.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+163,Check,Reported.Consolidated_Balance_Sheet_In_000_Usd.Total_Equity_And_Liabillities.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+171,Net income,Reported.Cash_Flows_From_Operating_Activities.Net_Income,93,Total long-lived assets by region,Balance_Sheet.Asset_Totals.Total_Long_Lived_Assets_By_Region,,24099,,0.9,Net income match,One Empty,Yes
+173,Depreciation and amortization,CashFlow_Statement.Operating_Activities.Depreciation_And_Amortization,,,,,16214,,0.0,No suitable source field found,No Match,No
+174,Deferred income taxes,CashFlow_Statement.Operating_Activities.Deferred_Income_Taxes,,,,,,,0.0,No suitable source field found,No Match,No
+175,Stock-based compensation,CashFlow_Statement.Operating_Activities.Stock_Based_Compensation,,,,,,,0.0,No suitable source field found,No Match,No
+176,Unrealized losses (gains) on foreign currency transactions,CashFlow_Statement.Operating_Activities.Unrealized_Losses_Gains_On_Foreign_Currency_Transactions,,,,,,,0.0,No suitable source field found,No Match,No
+177,Other,CashFlow_Statement.Operating_Activities.Other,,,,,143,,0.0,No suitable source field found,No Match,No
+178,"Provisions for inventory, warranty and bad debt",CashFlow_Statement.Operating_Activities.Provisions_For_Inventory_Warranty_And_Bad_Debt,,,,,14761,,0.0,No suitable source field found,No Match,No
+180,Accounts receivable,CashFlow_Statement.Operating_Activities.Accounts_Receivable,,,,,32579,,0.0,No suitable source field found,No Match,No
+181,Inventories,CashFlow_Statement.Operating_Activities.Inventories,,,,,1498,,0.0,No suitable source field found,No Match,No
+183,Accounts payable,Reported.Cash_Flows_From_Operating_Activities.Prepaid_Expenses_And_Other_Current_Assets.Accounts_Payable,,,,,,,0.0,No suitable source field found,No Match,No
+184,Accrued expenses and other liabilities,Reported.Cash_Flows_From_Operating_Activities.Prepaid_Expenses_And_Other_Current_Assets.Accrued_Expenses_And_Other_Liabilities,,,,,,,0.0,No suitable source field found,No Match,No
+185,Income and other taxes payable,Reported.Cash_Flows_From_Operating_Activities.Prepaid_Expenses_And_Other_Current_Assets.Income_And_Other_Taxes_Payable,,,,,-34698,,0.0,No suitable source field found,No Match,No
+186,Tax benefit from exercise of employee stock options,Reported.Cash_Flows_From_Operating_Activities.Prepaid_Expenses_And_Other_Current_Assets.Tax_Benefit_From_Exercise_Of_Employee_Stock_Options,,,,,,,0.0,No suitable source field found,No Match,No
+190,"Purchases of property, plant and equipment",Reported.Cash_Flows_From_Investing_Activities.Purchases_Of_Property_Plant_And_Equipment,,,,,-28052,,0.0,No suitable source field found,No Match,No
+191,Purchase of intangible assets,Reported.Cash_Flows_From_Investing_Activities.Purchase_Of_Intangible_Assets,,,,,,,0.0,No suitable source field found,No Match,No
+192,"Proceeds from sales of property, plant and equipment",Reported.Cash_Flows_From_Investing_Activities.Proceeds_From_Sales_Of_Property_Plant_And_Equipment,,,,,25262,,0.0,No suitable source field found,No Match,No
+193,Proceeds from short-term investments,Reported.Cash_Flows_From_Investing_Activities.Proceeds_From_Short_Term_Investments,,,,,-226521,,0.0,No suitable source field found,No Match,No
+194,Purchases of short-term investments,Reported.Cash_Flows_From_Investing_Activities.Purchases_Of_Short_Term_Investments,,,,,252890,,0.0,No suitable source field found,No Match,No
+195,Acquisition of businesses,Reported.Cash_Flows_From_Investing_Activities.Acquisition_Of_Businesses,,,,,,,0.0,No suitable source field found,No Match,No
+196,Others,Reported.Cash_Flows_From_Investing_Activities.Others,,,,,157,,0.0,No suitable source field found,No Match,No
+200,Proceeds from line-of-credit facilities,Reported.Cash_Flows_From_Financing_Activities.Proceeds_From_Line_Of_Credit_Facilities,,,,,,,0.0,No suitable source field found,No Match,No
+201,Payments on line-of-credit facilities,Reported.Cash_Flows_From_Financing_Activities.Payments_On_Line_Of_Credit_Facilities,,,,,,,0.0,No suitable source field found,No Match,No
+202,Purchase of noncontrolling interests,Reported.Cash_Flows_From_Financing_Activities.Purchase_Of_Noncontrolling_Interests,,,,,,,0.0,No suitable source field found,No Match,No
+204,Proceeds on long-term borrowings,Reported.Cash_Flows_From_Financing_Activities.Proceeds_On_Long_Term_Borrowings,,,,,,,0.0,No suitable source field found,No Match,No
+205,Principal payments on long-term borrowings,Reported.Cash_Flows_From_Financing_Activities.Principal_Payments_On_Long_Term_Borrowings,,,,,,,0.0,No suitable source field found,No Match,No
+206,Exercise of employee stock options and issuances under employee stock purchase plan,Reported.Cash_Flows_From_Financing_Activities.Exercise_Of_Employee_Stock_Options_And_Issuances_Under_Employee_Stock_Purchase_Plan,,,,,-1158,,0.0,No suitable source field found,No Match,No
+207,Tax benefit from exercise of employee stock options,Reported.Cash_Flows_From_Financing_Activities.Tax_Benefit_From_Exercise_Of_Employee_Stock_Options,,,,,-89616,,0.0,No suitable source field found,No Match,No
+208,"Proceeds from follow-on public offering, net of offering expenses",Reported.Cash_Flows_From_Financing_Activities.Proceeds_From_Follow_On_Public_Offering_Net_Of_Offering_Expenses,,,,,,,0.0,No suitable source field found,No Match,No
+209,Distributions to shareholders,Reported.Cash_Flows_From_Financing_Activities.Distributions_To_Shareholders,,,,,,,0.0,No suitable source field found,No Match,No
+210,"Purchase of Treasury Stock, at cost",Reported.Cash_Flows_From_Financing_Activities.Purchase_Of_Treasury_Stock_At_Cost,,,,,,,0.0,No suitable source field found,No Match,No
+211,Others,Reported.Cash_Flows_From_Financing_Activities.Others,,,,,,,0.0,No suitable source field found,No Match,No
+214,Effect of changes in exchange rates on cash and cash equivalents,CashFlow_Statement.Financing_Activities.Effect_Of_Changes_In_Exchange_Rates_On_Cash_And_Cash_Equivalents,,,,,-5780,,0.0,No suitable source field found,No Match,No
+215,Net increase in cash and cash equivalents,CashFlow_Statement.Financing_Activities.Net_Increase_In_Cash_And_Cash_Equivalents,,,,,-18222,,0.0,No suitable source field found,No Match,No
+216,Cash and cash equivalents - Beginning of period,CashFlow_Statement.Financing_Activities.Cash_And_Cash_Equivalents_Beginning_Of_Period,,,,,514674,,0.0,No suitable source field found,No Match,No
+217,Cash and cash equivalents - Ending balance,CashFlow_Statement.Financing_Activities.Cash_And_Cash_Equivalents_Ending_Balance,,,,,496452,,0.0,No suitable source field found,No Match,No
+219,Cash and cash equivalents - End of period,Reported.Cash_Flows_From_Financing_Activities.Less_Restricted_Cash_Included_In_Other_Current_Assets_And_Other_Assets.Cash_And_Cash_Equivalents_End_Of_Period,,,,,496452,,0.0,No suitable source field found,No Match,No
+221,Cash paid for interest,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Cash_Paid_For_Interest,,,,,4,,0.0,No suitable source field found,No Match,No
+222,Cash paid for income taxes,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Cash_Paid_For_Income_Taxes,,,,,8005,,0.0,No suitable source field found,No Match,No
+224,Demonstration units transferred from inventory to other assets,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Demonstration_Units_Transferred_From_Inventory_To_Other_Assets,,,,,,,0.0,No suitable source field found,No Match,No
+225,"Property, plant and equipment transferred from inventory",Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Property_Plant_And_Equipment_Transferred_From_Inventory,,,,,,,0.0,No suitable source field found,No Match,No
+226,"Additions to property, plant and equipment included in accounts payable",Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Additions_To_Property_Plant_And_Equipment_Included_In_Accounts_Payable,,,,,,,0.0,No suitable source field found,No Match,No
+227,Property purchase financed with debt,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Property_Purchase_Financed_With_Debt,,,,,,,0.0,No suitable source field found,No Match,No
+228,Others,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Others,,,,,,,0.0,No suitable source field found,No Match,No
+230,Check,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+231,Check,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+232,Check,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+233,Check,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+234,Check,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+235,Check,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+236,Check,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Check,,,,,0,,0.0,No suitable source field found,No Match,No
+241,Supplement information,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Supplement_Information,,,,,,,0.0,No suitable source field found,No Match,No
+243,Backlog (in Mn USD),Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Backlog_In_Mn_Usd,63,Total backlog of orders,Revenue_Statement.Totals.Total_Backlog_Of_Orders,,,,0.9,Backlog match,Both Empty,Yes
+244,Orders with firm shipment dates,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Orders_With_Firm_Shipment_Dates,64,Orders with firm shipment dates,Operations.Customer_Metrics.Orders_With_Firm_Shipment_Dates,,,,0.9,Orders with firm shipment dates match,Both Empty,Yes
+245,Orders expected to ship within one year (frame agreement),Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Orders_Expected_To_Ship_Within_One_Year_Frame_Agreement,65,Frame agreements,Key_Metrics.Revenue_By_Product.Frame_Agreements,,,,0.9,Frame agreements match,Both Empty,Yes
+246,Total,Financial_Statements.Totals.Total,,,,,,,0.0,No suitable source field found,No Match,No
+248,Employees,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Employees,,,,,,,0.0,No suitable source field found,No Match,No
+249,R&D,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Rd,,,,,,,0.0,No suitable source field found,No Match,No
+250,Manufacturing operations,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Manufacturing_Operations,97,Manufacturing operations,Operations.Employee_Metrics.Manufacturing_Operations,,,,0.9,Employee match for Manufacturing operations,Both Empty,Yes
+251,"Sales, service and marketing",Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Sales_Service_And_Marketing,98,"Sales, service and marketing",Operations.Employee_Metrics.Sales_Service_And_Marketing,,,,0.9,"Employee match for Sales,service and marketing",Both Empty,Yes
+252,General and administraative,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.General_And_Administraative,,,,,,,0.0,No suitable source field found,No Match,No
+253,Contractors,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Contractors,,,,,,,0.0,No suitable source field found,No Match,No
+254,Total,Financial_Statements.Totals.Total,,,,,,,0.0,No suitable source field found,No Match,No
+256,"Property, plant, and equipment (in '000 USD)",Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Property_Plant_And_Equipment_In_000_Usd,,,,,,,0.0,No suitable source field found,No Match,No
+257,Land,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Land,,,,,,,0.0,No suitable source field found,No Match,No
+258,Buildings,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Buildings,,,,,,,0.0,No suitable source field found,No Match,No
+259,Machinery and equipment,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Machinery_And_Equipment,,,,,,,0.0,No suitable source field found,No Match,No
+260,Office furniture and fixtures,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Office_Furniture_And_Fixtures,,,,,,,0.0,No suitable source field found,No Match,No
+261,Construction-in-progress,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Construction_In_Progress,,,,,,,0.0,No suitable source field found,No Match,No
+262,"Total property, plant and equipment",Financial_Statements.Totals.Total_Property_Plant_And_Equipment,,,,,,,0.0,No suitable source field found,No Match,No
+263,Accumulated depreciation,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Accumulated_Depreciation,,,,,,,0.0,No suitable source field found,No Match,No
+264,"Total property, plant and equipment — net",Financial_Statements.Totals.Total_Property_Plant_And_Equipment_Net,,,,,,,0.0,No suitable source field found,No Match,No
+266,"Depreciation and amortization (YTD, in '000 USD)",Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Depreciation_And_Amortization_Ytd_In_000_Usd,,,,,,,0.0,No suitable source field found,No Match,No
+267,Depreciation,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Depreciation,,,,,,,0.0,No suitable source field found,No Match,No
+268,Amortization,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Amortization,,,,,,,0.0,No suitable source field found,No Match,No
+269,Others,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Others,,,,,,,0.0,No suitable source field found,No Match,No
+270,Total,Financial_Statements.Totals.Total,,,,,,,0.0,No suitable source field found,No Match,No
+272,Inventories (in '000 USD),Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Inventories_In_000_Usd,,,,,,,0.0,No suitable source field found,No Match,No
+273,Components and raw materials,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Components_And_Raw_Materials,,,,,,,0.0,No suitable source field found,No Match,No
+274,Work-in-process,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Work_In_Process,,,,,,,0.0,No suitable source field found,No Match,No
+275,Finished goods,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Finished_Goods,,,,,,,0.0,No suitable source field found,No Match,No
+276,Total,Financial_Statements.Totals.Total,,,,,,,0.0,No suitable source field found,No Match,No
+278,Check,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Check,,,,,,,0.0,No suitable source field found,No Match,No
+279,Check,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Check,,,,,,,0.0,No suitable source field found,No Match,No
+280,Check,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Check,,,,,,,0.0,No suitable source field found,No Match,No
+281,Check,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Check,,,,,,,0.0,No suitable source field found,No Match,No
+282,Check,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Check,,,,,,,0.0,No suitable source field found,No Match,No
+283,Check,Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Check,,,,,,,0.0,No suitable source field found,No Match,No
