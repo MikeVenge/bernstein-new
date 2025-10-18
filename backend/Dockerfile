@@ -12,6 +12,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY main.py .
 COPY parameterized_field_mapper.py .
 COPY railway_config.py .
+COPY GENERIC_FIELD_MAPPINGS.csv .
 
 # Create necessary directories
 RUN mkdir -p uploads results
@@ -19,5 +20,5 @@ RUN mkdir -p uploads results
 # Expose port (Railway will override this with PORT env var)
 EXPOSE 8000
 
-# Start the FastAPI application (Railway will use PORT env var)
-CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}
+# Start the FastAPI application (Railway will set PORT env var)
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
