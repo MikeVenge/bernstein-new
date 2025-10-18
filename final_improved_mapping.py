@@ -31,9 +31,12 @@ def analyze_key_metrics_final(source_file: str) -> List[Dict]:
     
     sheet = wb['Key Metrics']
     
-    # Get column headers
+    # Get column headers - focus on the specific columns we need
     column_headers = []
-    for col_idx in range(2, min(sheet.max_column + 1, 20)):
+    
+    # Add specific columns we're interested in
+    important_cols = [92, 93]  # CN (Q1 2024), CO (Q2 2024)
+    for col_idx in important_cols:
         header_val = sheet.cell(4, col_idx).value
         if header_val:
             column_headers.append({
@@ -41,6 +44,17 @@ def analyze_key_metrics_final(source_file: str) -> List[Dict]:
                 'header': str(header_val),
                 'clean_header': clean_date_header(str(header_val))
             })
+    
+    # Also get other columns for completeness
+    for col_idx in range(2, min(sheet.max_column + 1, 20)):
+        if col_idx not in important_cols:
+            header_val = sheet.cell(4, col_idx).value
+            if header_val:
+                column_headers.append({
+                    'col_idx': col_idx,
+                    'header': str(header_val),
+                    'clean_header': clean_date_header(str(header_val))
+                })
     
     field_mappings = []
     current_section_context = None
@@ -221,17 +235,24 @@ def clean_field_name(name: str) -> str:
     return cleaned
 
 
-def clean_date_header(header: str) -> str:
+def clean_date_header(header) -> str:
     """Clean date headers."""
-    if 'datetime' in str(type(header)).lower():
-        return header.strftime('%Y_Q%m')
+    # Handle datetime objects
+    if hasattr(header, 'strftime'):
+        # Convert to Q1, Q2, Q3, Q4 format
+        year = header.year
+        month = header.month
+        quarter = (month - 1) // 3 + 1
+        return f"{year}_Q{quarter}"
     
     header_str = str(header).strip()
+    
+    # Handle string dates like "2024-03-31"
     if re.match(r'\d{4}-\d{2}-\d{2}', header_str):
         year = header_str[:4]
         month = header_str[5:7]
-        quarter = f"Q{(int(month) - 1) // 3 + 1}"
-        return f"{year}_{quarter}"
+        quarter = (int(month) - 1) // 3 + 1
+        return f"{year}_Q{quarter}"
     
     return header_str.replace('-', '_').replace(' ', '_')
 
@@ -255,9 +276,22 @@ def save_final_mapping(field_mappings: List[Dict], output_file: str):
         writer.writeheader()
         
         for mapping in field_mappings:
-            # Get Q1 and Q2 2024 values
+            # Get Q1 and Q2 2024 values - look for the actual column data
             q1_val = mapping['values'].get('2024_Q1', '')
             q2_val = mapping['values'].get('2024_Q2', '')
+            
+            # Also try direct column access if date parsing didn't work
+            if not q1_val:
+                for col_name, col_val in mapping['values'].items():
+                    if '2024-03-31' in str(col_name) or 'CN_92' in str(col_name):
+                        q1_val = col_val
+                        break
+            
+            if not q2_val:
+                for col_name, col_val in mapping['values'].items():
+                    if '2024-06-30' in str(col_name) or 'CO_93' in str(col_name):
+                        q2_val = col_val
+                        break
             
             writer.writerow({
                 'Row_Number': mapping['row_number'],
