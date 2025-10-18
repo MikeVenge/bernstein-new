@@ -1,0 +1,16 @@
+source_id,dest_id,confidence_score,match_reason
+SRC_6,DEST_12,0.95,North America revenue absolute values match
+SRC_7,DEST_13,0.98,Germany revenue absolute values match
+SRC_9,DEST_15,0.98,China revenue absolute values match
+SRC_10,DEST_16,0.98,Japan revenue absolute values match
+SRC_16,DEST_48,0.9,North America revenue percentage values match
+SRC_17,DEST_49,0.92,Germany revenue percentage values match
+SRC_19,DEST_51,0.92,China revenue percentage values match
+SRC_20,DEST_52,0.92,Japan revenue percentage values match
+SRC_26,DEST_22,0.95,Materials Processing application absolute match
+SRC_29,DEST_25,0.98,Communications application absolute match
+SRC_30,DEST_26,0.98,Medical application absolute match
+SRC_46,DEST_30,0.98,High-power CW lasers product match
+SRC_47,DEST_31,0.98,Medium-power CW lasers product match
+SRC_48,DEST_32,0.98,Pulsed lasers product match
+SRC_49,DEST_33,0.98,QCW lasers product match

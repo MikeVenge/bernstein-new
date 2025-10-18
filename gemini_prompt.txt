@@ -1,0 +1,84 @@
+You are an expert financial data analyst. I need you to match source fields to destination fields based on their semantic meaning and hierarchical context.
+
+TASK: Match each destination field to the most appropriate source field. Return ONLY a CSV with the matched pairs.
+
+IMPORTANT RULES:
+1. Each source field should map to AT MOST ONE destination field (one-to-one mapping)
+2. Pay attention to percentage vs absolute value contexts:
+   - "Revenue by region" (absolute values) should match "Region breakdown" 
+   - "Revenue by region (% of total)" (percentages) should match "Region mix (%)"
+   - "Revenue by application" should match "End market breakdown"
+   - "Revenue by product" should match "Segment breakdown"
+3. Geographic terms should match: "North America" ↔ "United States and other North America"
+4. Only return matches where you are confident (>70% confidence)
+5. Return CSV format with headers: source_id,dest_id,confidence_score,match_reason
+
+SOURCE FIELDS (with enhanced scoping):
+SRC_1: North America | Section: Revenue by region | Scope: Revenue_Statement.Geographic_Breakdown.North_America | Is_Percentage: False
+SRC_2: Germany | Section: Revenue by region | Scope: Revenue_Statement.Geographic_Breakdown.Germany | Is_Percentage: False
+SRC_4: China | Section: Revenue by region | Scope: Revenue_Statement.Geographic_Breakdown.China | Is_Percentage: False
+SRC_5: Japan | Section: Revenue by region | Scope: Revenue_Statement.Geographic_Breakdown.Japan | Is_Percentage: False
+SRC_8: Total revenue | Section: Revenue by region | Scope: Revenue_Statement.Totals.Total_Revenue | Is_Percentage: False
+SRC_9: North America | Section: Revenue by region (% of total) | Scope: Revenue_Statement.Geographic_Breakdown_Percent.North_America | Is_Percentage: True
+SRC_10: Germany | Section: Revenue by region (% of total) | Scope: Revenue_Statement.Geographic_Breakdown_Percent.Germany | Is_Percentage: True
+SRC_12: China | Section: Revenue by region (% of total) | Scope: Revenue_Statement.Geographic_Breakdown_Percent.China | Is_Percentage: True
+SRC_13: Japan | Section: Revenue by region (% of total) | Scope: Revenue_Statement.Geographic_Breakdown_Percent.Japan | Is_Percentage: True
+SRC_16: Total revenue | Section: Revenue by region (% of total) | Scope: Revenue_Statement.Totals_Percent.Total_Revenue | Is_Percentage: True
+SRC_17: Materials processing | Section: Revenue by application | Scope: Revenue_Statement.Application_Breakdown.Materials_Processing | Is_Percentage: False
+SRC_20: Communications | Section: Revenue by application | Scope: Revenue_Statement.Application_Breakdown.Communications | Is_Percentage: False
+SRC_22: Total revenue | Section: Revenue by application | Scope: Revenue_Statement.Totals.Total_Revenue | Is_Percentage: False
+SRC_23: Materials processing | Section: Revenue by application (% of total) | Scope: Revenue_Statement.Application_Breakdown_Percent.Materials_Processing | Is_Percentage: True
+SRC_27: Other materials processing | Section: Revenue by application (% of total) | Scope: Revenue_Statement.Application_Breakdown_Percent.Materials_Processing | Is_Percentage: True
+SRC_30: Communications | Section: Revenue by application (% of total) | Scope: Revenue_Statement.Application_Breakdown_Percent.Communications | Is_Percentage: True
+SRC_32: Total revenue | Section: Revenue by application (% of total) | Scope: Revenue_Statement.Totals_Percent.Total_Revenue | Is_Percentage: True
+SRC_39: Total revenue | Section: Revenue by product | Scope: Revenue_Statement.Totals.Total_Revenue | Is_Percentage: False
+SRC_46: Total revenue | Section: Revenue by product | Scope: Revenue_Statement.Totals.Total_Revenue | Is_Percentage: False
+SRC_47: Total backlog of orders | Section: Revenue by product | Scope: Revenue_Statement.Totals.Total_Backlog_Of_Orders | Is_Percentage: False
+SRC_50: Total backlog of orders | Section: Revenue by product | Scope: Revenue_Statement.Totals.Total_Backlog_Of_Orders | Is_Percentage: False
+SRC_65: Germany | Section: Revenue by product | Scope: Key_Metrics.Geographic_Data.Germany | Is_Percentage: False
+SRC_67: Total long-lived assets by region | Section: Revenue by product | Scope: Revenue_Statement.Totals.Total_Long_Lived_Assets_By_Region | Is_Percentage: False
+SRC_69: Germany | Section: Long-lived assets by region (% of total) | Scope: Balance_Sheet.Geographic_Assets_Percent.Germany | Is_Percentage: True
+SRC_71: Total long-lived assets by region | Section: Long-lived assets by region (% of total) | Scope: Balance_Sheet.Asset_Totals.Total_Long_Lived_Assets_By_Region | Is_Percentage: True
+SRC_77: Total employees | Section: Long-lived assets by region (% of total) | Scope: Balance_Sheet.Asset_Totals.Total_Employees | Is_Percentage: True
+SRC_80: Germany | Section: Long-lived assets by region (% of total) | Scope: Balance_Sheet.Geographic_Assets_Percent.Germany | Is_Percentage: True
+SRC_82: Total employees | Section: Long-lived assets by region (% of total) | Scope: Balance_Sheet.Asset_Totals.Total_Employees | Is_Percentage: True
+SRC_83: Total devices and customers | Section: Long-lived assets by region (% of total) | Scope: Balance_Sheet.Asset_Totals.Total_Devices_And_Customers | Is_Percentage: True
+
+DESTINATION FIELDS (with enhanced scoping):
+DEST_2: United States and other North America | Section:  | Scope: Financial_Statements.Geographic_Data.North_America
+DEST_3: Germany | Section:  | Scope: Financial_Statements.Geographic_Data.Germany
+DEST_5: China | Section:  | Scope: Financial_Statements.Geographic_Data.China
+DEST_6: Japan | Section:  | Scope: Financial_Statements.Geographic_Data.Japan
+DEST_9: Total | Section:  | Scope: Income_Statement.Totals.Total
+DEST_10: Materials Processing | Section: End_Market_Breakdown | Scope: Reported.Segment_Information_In_000_Usd_Ytd.End_Market_Breakdown.Materials_Processing
+DEST_12: Communications | Section: End_Market_Breakdown | Scope: Revenue_Statement.Application_Breakdown.Communications
+DEST_14: Total | Section: End_Market_Breakdown | Scope: Income_Statement.Totals.Total
+DEST_21: Total | Section: Segment_Breakdown | Scope: Income_Statement.Totals.Total
+DEST_27: United States and other North America | Section:  | Scope: Financial_Statements.Geographic_Data.North_America
+DEST_28: Germany | Section:  | Scope: Financial_Statements.Geographic_Data.Germany
+DEST_30: China | Section:  | Scope: Financial_Statements.Geographic_Data.China
+DEST_31: Japan | Section:  | Scope: Financial_Statements.Geographic_Data.Japan
+DEST_34: Total | Section:  | Scope: Income_Statement.Totals.Total
+DEST_36: Materials Processing | Section:  | Scope: Reported.Segment_Information.Materials_Processing
+DEST_38: Communications | Section:  | Scope: Revenue_Statement.Application_Breakdown.Communications
+DEST_40: Total | Section:  | Scope: Income_Statement.Totals.Total
+DEST_48: Total | Section:  | Scope: Income_Statement.Totals.Total
+DEST_56: Total operating expenses | Section:  | Scope: Income_Statement.Expenses.Total_Operating_Expenses
+DEST_60: Total other income (expense), net | Section:  | Scope: Income_Statement.Expenses.Total_Other_Income_Expense_Net
+DEST_77: Total other comprehensive income (loss), net of tax | Section:  | Scope: Income_Statement.Profitability.Total_Other_Comprehensive_Income_Loss_Net_Of_Tax
+DEST_95: Total assets | Section: Other_Non_Current_Assets | Scope: Balance_Sheet.Assets.Total_Assets
+DEST_101: Total liabilities | Section: Deferred_Income_Taxes_And_Other_Non_Current_Liabilities | Scope: Financial_Statements.Totals.Total_Liabilities
+DEST_167: Total | Section:  | Scope: Financial_Statements.Totals.Total
+DEST_174: Total | Section:  | Scope: Financial_Statements.Totals.Total
+DEST_181: Total property, plant and equipment | Section:  | Scope: Financial_Statements.Totals.Total_Property_Plant_And_Equipment
+DEST_183: Total property, plant and equipment — net | Section:  | Scope: Financial_Statements.Totals.Total_Property_Plant_And_Equipment_Net
+DEST_188: Total | Section:  | Scope: Financial_Statements.Totals.Total
+DEST_190: Components and raw materials | Section:  | Scope: Reported.Supplemental_Disclosures_Of_Cash_Flow_Information.Non_Cash_Transactions.Components_And_Raw_Materials
+DEST_193: Total | Section:  | Scope: Financial_Statements.Totals.Total
+
+RETURN ONLY CSV FORMAT:
+source_id,dest_id,confidence_score,match_reason
+
+Example:
+SRC_6,DEST_12,0.95,North America revenue absolute values match
+SRC_16,DEST_48,0.90,North America revenue percentage values match
