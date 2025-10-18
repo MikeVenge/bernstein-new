@@ -11,32 +11,56 @@ const FileUpload = ({ onFilesUploaded }) => {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState(null);
 
-  const createDropzone = (fileType, accept) => {
-    return useDropzone({
-      onDrop: useCallback((acceptedFiles) => {
-        if (acceptedFiles.length > 0) {
-          setFiles(prev => ({ ...prev, [fileType]: acceptedFiles[0] }));
-          setError(null);
-        }
-      }, [fileType]),
-      accept: accept,
-      multiple: false,
-      maxSize: 50 * 1024 * 1024 // 50MB
-    });
-  };
+  // Define callbacks for each file type
+  const onDropSource = useCallback((acceptedFiles) => {
+    if (acceptedFiles.length > 0) {
+      setFiles(prev => ({ ...prev, source: acceptedFiles[0] }));
+      setError(null);
+    }
+  }, []);
 
-  const sourceDropzone = createDropzone('source', {
-    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx'],
-    'application/vnd.ms-excel': ['.xls']
+  const onDropDestination = useCallback((acceptedFiles) => {
+    if (acceptedFiles.length > 0) {
+      setFiles(prev => ({ ...prev, destination: acceptedFiles[0] }));
+      setError(null);
+    }
+  }, []);
+
+  const onDropMapping = useCallback((acceptedFiles) => {
+    if (acceptedFiles.length > 0) {
+      setFiles(prev => ({ ...prev, mapping: acceptedFiles[0] }));
+      setError(null);
+    }
+  }, []);
+
+  // Create dropzones at the top level
+  const sourceDropzone = useDropzone({
+    onDrop: onDropSource,
+    accept: {
+      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx'],
+      'application/vnd.ms-excel': ['.xls']
+    },
+    multiple: false,
+    maxSize: 50 * 1024 * 1024 // 50MB
   });
 
-  const destinationDropzone = createDropzone('destination', {
-    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx'],
-    'application/vnd.ms-excel': ['.xls']
+  const destinationDropzone = useDropzone({
+    onDrop: onDropDestination,
+    accept: {
+      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx'],
+      'application/vnd.ms-excel': ['.xls']
+    },
+    multiple: false,
+    maxSize: 50 * 1024 * 1024 // 50MB
   });
 
-  const mappingDropzone = createDropzone('mapping', {
-    'text/csv': ['.csv']
+  const mappingDropzone = useDropzone({
+    onDrop: onDropMapping,
+    accept: {
+      'text/csv': ['.csv']
+    },
+    multiple: false,
+    maxSize: 50 * 1024 * 1024 // 50MB
   });
 
   const handleUpload = async () => {
