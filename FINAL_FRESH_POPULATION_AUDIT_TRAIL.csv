@@ -1,0 +1,135 @@
+Dest_Row,Dest_Field_Name,Source_Sheet,Source_Row,Source_Field_Name,Source_Q2_Value,Source_Location,Match_Method,Previous_Value,Status
+12,United States and other North America,Key Metrics,6,North America,76905,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|6|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+13,Germany,Key Metrics,7,Germany,20809,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|7|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+14,Other including Eastern Europe/CIS,Key Metrics,8,Other Europe,53722,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|8|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+15,China,Key Metrics,9,China,64875,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|9|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+16,Japan,Key Metrics,10,Japan,10215,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|10|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+17,Other Asian countries,Key Metrics,11,Other Asia,27643,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|11|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+18,Rest of World,Key Metrics,12,Rest of World,3476,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|12|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+19,Total,Key Metrics,13,Total revenue,257645,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|13|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+22,Materials Processing,Key Metrics,26,Materials processing,225773,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|26|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+23,"Other application, of which",Key Metrics,27,Other applications,31872,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|27|93,Manual_Semantic_Match_Q1_Close,,POPULATED
+27,Total,Key Metrics,31,Total revenue,257645,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|31|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+30,High-power CW lasers (1 Kilowatt or Greater),Key Metrics,46,High-power CW lasers (1 Kilowatt or Greater),82225,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|46|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+31,Medium-power CW lasers (Less Than 1 Kilowatt),Key Metrics,47,Medium-power CW lasers (Less Than 1 Kilowatt),15758,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|47|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+32,Pulsed lasers,Key Metrics,48,Pulsed lasers,42536,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|48|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+33,QCW lasers,Key Metrics,49,QCW lasers,10549,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|49|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+34,Systems,Key Metrics,50,Laser and Non-Laser Systems,38668,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|50|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+35,"Other revenue (amplifiers, service, parts, accessories and change in deferred)",Key Metrics,51,"Other revenue (amplifiers, service, parts, accessories and change in deferred)",67909,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|51|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+36,Total,Key Metrics,52,Total revenue,257645,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|52|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+39,Check,Income Statement,13,Goodwill impairment,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|13|93,Q1_Value_Verification_Complete,,POPULATED
+40,Check,Income Statement,15,Impairment of long-lived assets,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|15|93,Q1_Value_Verification_Complete,,POPULATED
+41,Check,Income Statement,16,"Restructuring charges (recoveries), net",0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|16|93,Q1_Value_Verification_Complete,,POPULATED
+42,Check,Income Statement,31,Less: net income (loss) attributable to noncontrolling interests,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|31|93,Q1_Value_Verification_Complete,,POPULATED
+48,United States and other North America,Key Metrics,16,North America,0.2984921112383318,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|16|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+49,Germany,Key Metrics,17,Germany,0.0807661705059287,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|17|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+50,Other including Eastern Europe/CIS,Key Metrics,18,Other Europe,0.2085117118515787,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|18|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+51,China,Key Metrics,19,China,0.2517999573055949,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|19|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+52,Japan,Key Metrics,20,Japan,0.039647577092511016,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|20|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+53,Other Asian countries,Key Metrics,21,Other Asia,0.10729103999689495,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|21|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+54,Rest of World,Key Metrics,22,Rest of World,0.013491432009159891,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|22|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+55,Total,Key Metrics,23,Total revenue,1,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|23|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+58,Materials Processing,Key Metrics,34,Materials processing,0.876294901899901,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|34|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+63,Total,Key Metrics,43,Total revenue,1,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|43|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+66,High-power CW lasers (1 Kilowatt or Greater),Key Metrics,55,High-power CW lasers (1 Kilowatt or Greater),0.3191406780647791,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|55|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+67,Medium-power CW lasers (Less Than 1 Kilowatt),Key Metrics,56,Medium-power CW lasers (Less Than 1 Kilowatt),0.06116167594946535,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|56|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+68,Pulsed lasers,Key Metrics,57,Pulsed lasers,0.1650953831822857,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|57|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+69,QCW lasers,Key Metrics,58,QCW lasers,0.04094393448349473,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|58|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+70,Systems,Key Metrics,59,Laser and Non-Laser Systems,0.15008247782801917,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|59|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+71,"Other revenue (amplifiers, service, parts, accessories and change in deferred)",Key Metrics,60,"Other revenue (amplifiers, service, parts, accessories and change in deferred)",0.263575850491956,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|60|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+72,Total,Key Metrics,61,Total revenue,1,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|61|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+79,Net Sales,Key Metrics,13,Total revenue,257645,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|13|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+80,Cost of sales,Income Statement,6,Cost of sales,161459,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|6|93,Q1_Value_Verification_Complete,,POPULATED
+81,Gross profit,Income Statement,7,Gross profit,96186,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|7|93,Q1_Value_Verification_Complete,,POPULATED
+82,Sales and marketing,Income Statement,10,Sales and marketing,22487,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|10|93,Q1_Value_Verification_Complete,,POPULATED
+83,Research and development,Income Statement,11,Research and development,27487,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|11|93,Q1_Value_Verification_Complete,,POPULATED
+84,General and administrative,Income Statement,12,General and administrative,31602,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|12|93,Q1_Value_Verification_Complete,,POPULATED
+85,Loss (gain) on foreign exchange and others,Income Statement,17,Loss (gain) on foreign exchange,3244,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|17|93,Manual_Semantic_Match,,POPULATED
+86,Total operating expenses,Income Statement,18,Total operating expenses,84146,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|18|93,Q1_Value_Verification_Complete,,POPULATED
+87,Operating Income,Income Statement,20,Operating income (loss),12040,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|20|93,Q1_Value_Verification_Complete,,POPULATED
+88,"Interest income (expense), net",Income Statement,23,"Interest income (expense), net",12778,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|23|93,Q1_Value_Verification_Complete,,POPULATED
+89,"Other income (expense), net",Income Statement,24,"Other income (expense), net",194,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|24|93,Q1_Value_Verification_Complete,,POPULATED
+90,"Total other income (expense), net",Income Statement,25,Total other income (expense),12972,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|25|93,Q1_Value_Verification_Complete,,POPULATED
+91,Income before provision for income taxes,Income Statement,27,Income (loss) before provision for income taxes,25012,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|27|93,Q1_Value_Verification_Complete,,POPULATED
+92,Provision for income taxes,Income Statement,28,Provision for income taxes,4858,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|28|93,Manual_Field_Name_Match,,POPULATED
+93,Net income,Income Statement,30,Net income (loss),20154,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|30|93,Q1_Value_Verification_Complete,,POPULATED
+95,Net income attributable to IPG Photonics Corporation,Income Statement,33,Net income (loss) attributable to IPG Photonics Corporation,20154,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|33|93,Q1_Value_Verification_Complete,,POPULATED
+97,Basic,Income Statement,36,Basic,0.45,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|36|93,Q1_Value_Verification_Complete,,POPULATED
+98,Diluted,Income Statement,37,Diluted,0.45,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|37|93,Q1_Value_Verification_Complete,,POPULATED
+100,Basic,Income Statement,40,Basic,44918,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|40|93,Q1_Value_Verification_Complete,,POPULATED
+101,Diluted,Income Statement,41,Diluted,45012,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|41|93,Q1_Value_Verification_Complete,,POPULATED
+113,Check,Income Statement,32,Preferred stock Accretion & Beneficial Conversion Feature,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Income Statement|32|93,Q1_Value_Verification_Complete,,POPULATED
+114,Check,Balance Sheet,27,Revolving line-of-credit facilities,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|27|93,Q1_Value_Verification_Complete,,POPULATED
+115,Check,Balance Sheet,28,Current portion of long-term debt,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|28|93,Q1_Value_Verification_Complete,,POPULATED
+116,Check,Balance Sheet,38,"Long-term debt, net of current portion",0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|38|93,Q1_Value_Verification_Complete,,POPULATED
+123,Cash and cash equivalents,Balance Sheet,7,Cash and cash equivalents,720540,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|7|93,Q1_Value_Verification_Complete,,POPULATED
+124,Short-term investments,Balance Sheet,8,Short-term investments,343363,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|8|93,Q1_Value_Verification_Complete,,POPULATED
+125,"Accounts receivable, net",Balance Sheet,9,"Accounts receivable, net",176153,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|9|93,Q1_Value_Verification_Complete,,POPULATED
+126,Inventories,Balance Sheet,10,Inventories,400839,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|10|93,Q1_Value_Verification_Complete,,POPULATED
+127,Prepaid income taxes,Balance Sheet,14,Prepaid income taxes,30208,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|14|93,Q1_Value_Verification_Complete,,POPULATED
+128,Prepaid expenses and others,Balance Sheet,15,Prepaid expenses and other current assets,46849,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|15|93,Q1_Value_Verification_Complete,,POPULATED
+130,Total current assets,Balance Sheet,16,Total Current Assets,1717952,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|16|93,Manual_Field_Name_Match,,POPULATED
+131,"Deferred income taxes, net",Balance Sheet,18,"Deferred income taxes, net",88865,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|18|93,Q1_Value_Verification_Complete,,POPULATED
+132,Goodwill,Balance Sheet,19,Goodwill,38278,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|19|93,Q1_Value_Verification_Complete,,POPULATED
+133,"Intangible assets, net",Balance Sheet,20,"Intangible assets, net",23423,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|20|93,Q1_Value_Verification_Complete,,POPULATED
+134,"Property, plant and equipment, net",Balance Sheet,21,"Property, plant and equipment, net",593136,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|21|93,Q1_Value_Verification_Complete,,POPULATED
+135,Other non-current assets,Balance Sheet,22,Other assets,33777,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|22|93,Manual_Semantic_Match,,POPULATED
+136,Total assets,Balance Sheet,23,Total assets,2495431,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|23|93,Q1_Value_Verification_Complete,,POPULATED
+139,Accounts payable,Balance Sheet,29,Accounts payable,26232,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|29|93,Q1_Value_Verification_Complete,,POPULATED
+140,Accrued expenses and other liabilities,Balance Sheet,30,Accrued compensation (composite),60722,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|30|93,Manual_Composite_Match,,POPULATED
+141,Income taxes payable,Balance Sheet,34,Income taxes payable,3022,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|34|93,Q1_Value_Verification_Complete,,POPULATED
+143,Total current liabilities,Balance Sheet,35,Total Current Liabilities,190483,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|35|93,Manual_Field_Name_Match,,POPULATED
+144,Deferred income taxes and other non-current liabilities,Balance Sheet,37,Other long-term liabilities and deferred income taxes,51578,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|37|93,Manual_Field_Name_Match,,POPULATED
+145,"Long-term debt, net of current portion",Balance Sheet,38,"Long-term debt, net of current portion",0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|38|93,Manual_Field_Name_Match,,POPULATED
+146,Total liabilities,Balance Sheet,39,Total Liabilities,242061,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|39|93,Q1_Value_Verification_Complete,,POPULATED
+149,"Treasury stock, at cost",Balance Sheet,45,"Treasury stock, at cost",-1373525,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|45|93,Q1_Value_Verification_Complete,,POPULATED
+150,Additional paid-in capital,Balance Sheet,46,Additional paid-in capital,1014094,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|46|93,Q1_Value_Verification_Complete,,POPULATED
+151,Retained earnings,Balance Sheet,48,Retained earnings,2839647,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|48|93,Q1_Value_Verification_Complete,,POPULATED
+152,Accumulated other comprehensive loss,Balance Sheet,49,Accumulated other comprehensive gain (loss),-226852,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|49|93,Q1_Value_Verification_Complete,,POPULATED
+153,Total IPG Photonics Corporation equity,Balance Sheet,50,Total IPG Photonics Corporation equity,2253370,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|50|93,Manual_Field_Name_Match,,POPULATED
+154,Noncontrolling interests,Balance Sheet,52,Noncontrolling interests,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|52|93,Manual_Field_Name_Match,,POPULATED
+155,Total equity,Balance Sheet,53,Total equity,2253370,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|53|93,Manual_Field_Name_Match,,POPULATED
+156,Total equity and liabillities,Balance Sheet,54,Total liabilities and equity,2495431,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|54|93,Manual_Field_Name_Match,,POPULATED
+158,Check,Balance Sheet,41,Redeemable Noncontrolling Interests,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|41|93,Q1_Value_Verification_Complete,,POPULATED
+159,Check,Balance Sheet,47,Notes receivable from stockholders,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|47|93,Q1_Value_Verification_Complete,,POPULATED
+160,Check,Balance Sheet,52,Noncontrolling interests,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|52|93,Q1_Value_Verification_Complete,,POPULATED
+161,Check,Balance Sheet,58,Contingent purchase consideration,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|58|93,Q1_Value_Verification_Complete,,POPULATED
+162,Check,Balance Sheet,59,Revolving line-of-credit facilities,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|59|93,Q1_Value_Verification_Complete,,POPULATED
+163,Check,Balance Sheet,60,Current portion of long-term debt,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|60|93,Q1_Value_Verification_Complete,,POPULATED
+171,Net income,Cash Flows,6,Net income (loss),20154,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|6|93,Q1_Value_Verification_Complete,,POPULATED
+173,Depreciation and amortization,Key Metrics,47,Medium-power CW lasers (Less Than 1 Kilowatt),15758,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Key Metrics|47|93,Q1_Value_Verification_Precision_Adjusted,,POPULATED
+174,Deferred income taxes,Cash Flows,11,Deferred income taxes,-3324,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|11|93,Q1_2023_Verification_With_Semantic,,POPULATED
+175,Stock-based compensation,Cash Flows,12,Stock-based compensation,8544,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|12|93,Q1_2023_Verification_With_Semantic,,POPULATED
+177,Other,Cash Flows,15,Other,-5592,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|15|93,Manual_Field_Name_Match,,POPULATED
+178,"Provisions for inventory, warranty and bad debt",Cash Flows,16,"Provisions for inventory, warranty & bad debt",15604,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|16|93,Q1_Value_Verification_Complete,,POPULATED
+180,Accounts receivable,Cash Flows,18,Accounts receivable,6155,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|18|93,Manual_Field_Name_Match,,POPULATED
+181,Inventories,Cash Flows,19,Inventories,15543,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|19|93,Q1_Value_Verification_Complete,,POPULATED
+182,Prepaid expenses and other current assets,Cash Flows,20,Prepaid expenses and other current assets,200,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|20|93,Q1_2023_Verification_With_Semantic,,POPULATED
+183,Accounts payable,Cash Flows,21,Accounts payable,1002,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|21|93,Q1_2023_Verification_With_Semantic,,POPULATED
+184,Accrued expenses and other liabilities,Cash Flows,22,Accrued expenses and other liabilities,-2035,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|22|93,Q1_2023_Verification_With_Semantic,,POPULATED
+185,Income and other taxes payable,Cash Flows,23,Income and other taxes payable,-18306,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|23|93,Manual_Field_Name_Match,,POPULATED
+187,Net cash provided by operating activities,Cash Flows,24,Net cash (used in) provided by operating activities,53458,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|24|93,Manual_Field_Name_Match,,POPULATED
+190,"Purchases of property, plant and equipment",Cash Flows,27,"Purchases of and deposits on property, plant and equipment",-24218,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|27|93,Q1_Value_Verification_Complete,,POPULATED
+192,"Proceeds from sales of property, plant and equipment",Cash Flows,29,"Proceeds from sales of property, plant and equipment",3012,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|29|93,Q1_Value_Verification_Complete,,POPULATED
+193,Proceeds from short-term investments,Cash Flows,30,Purchases of short-term investments,-75020,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|30|93,Q1_Value_Verification_Complete,,POPULATED
+194,Purchases of short-term investments,Cash Flows,31,Proceeds from short-term investments,381103,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|31|93,Q1_Value_Verification_Complete,,POPULATED
+196,Others,Cash Flows,34,Other,31,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|34|93,Q1_Value_Verification_Complete,,POPULATED
+197,Net cash used in investing activities,Cash Flows,35,Net cash (used in) provided by investing activities,284908,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|35|93,Manual_Semantic_Match,,POPULATED
+205,Principal payments on long-term borrowings,Cash Flows,42,Principal payments on long-term borrowings,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|42|93,Exact_Field_Name_With_Historical_Verification,,POPULATED
+206,Exercise of employee stock options and issuances under employee stock purchase plan,Cash Flows,43,Exercise of employee stock options and issuances under employee stock purchase plan,2950,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|43|93,Q1_Value_Verification_Complete,,POPULATED
+207,Tax benefit from exercise of employee stock options,Cash Flows,44,"Purchase of treasury stock, at cost",-122404,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|44|93,Q1_Value_Verification_Complete,,POPULATED
+212,Net cash provided by financing activities,Cash Flows,49,Net cash (used in) provided by financing activities,-119454,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|49|93,Manual_Semantic_Match,,POPULATED
+214,Effect of changes in exchange rates on cash and cash equivalents,Cash Flows,51,"Effect of changes in exchange rates on cash, cash equivalents and restricted cash",5176,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|51|93,Q1_Value_Verification_Complete,,POPULATED
+215,Net increase in cash and cash equivalents,Cash Flows,53,"Net increase (decrease) in cash, cash equivalents and restricted cash",224088,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|53|93,Q1_Value_Verification_Complete,,POPULATED
+216,Cash and cash equivalents - Beginning of period,Cash Flows,54,Cash and cash equivalents — Beginning of period,496452,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|54|93,Q1_Value_Verification_Complete,,POPULATED
+217,Cash and cash equivalents - Ending balance,Cash Flows,55,"Cash, cash equivalents and restricted cash — End of period",720540,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|55|93,Q1_Value_Verification_Complete,,POPULATED
+219,Cash and cash equivalents - End of period,Cash Flows,57,Cash and cash equivalents — End of period,720540,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|57|93,Q1_Value_Verification_Complete,,POPULATED
+221,Cash paid for interest,Cash Flows,60,Cash paid for interest,90,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|60|93,Q1_Value_Verification_Complete,,POPULATED
+222,Cash paid for income taxes,Cash Flows,61,Cash paid for income taxes,26160,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|61|93,Q1_Value_Verification_Complete,,POPULATED
+230,Check,Balance Sheet,61,"Long-term debt, net of current portion",0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|61|93,Q1_Value_Verification_Complete,,POPULATED
+231,Check,Balance Sheet,62,Redeemable Noncontrolling Interests,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Balance Sheet|62|93,Q1_Value_Verification_Complete,,POPULATED
+232,Check,Cash Flows,9,Goodwill impairment,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|9|93,Q1_Value_Verification_Complete,,POPULATED
+233,Check,Cash Flows,10,"Impairment of long-lived assets and restructuring charges (recoveries), net",0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|10|93,Q1_Value_Verification_Complete,,POPULATED
+234,Check,Cash Flows,14,Gain on divestiture and sale of asset,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|14|93,Q1_Value_Verification_Complete,,POPULATED
+235,Check,Cash Flows,28,Purchase of intangible assets,0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|28|93,Q1_Value_Verification_Complete,,POPULATED
+236,Check,Cash Flows,32,"Acquisition of businesses, net of cash acquired",0,IPGP-Financial-Data-Workbook-2024-Q2.xlsx|Cash Flows|32|93,Q1_Value_Verification_Complete,,POPULATED

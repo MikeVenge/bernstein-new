@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarterly Earning Field Mapper</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function App() {
+            const [backendStatus, setBackendStatus] = useState('checking');
+
+            React.useEffect(() => {
+                const checkBackend = async () => {
+                    try {
+                        await axios.get('/api/health');
+                        setBackendStatus('connected');
+                    } catch (err) {
+                        setBackendStatus('disconnected');
+                    }
+                };
+                checkBackend();
+            }, []);
+
+            return (
+                <div className="min-h-screen bg-gray-50">
+                    <header className="bg-white shadow-sm border-b">
+                        <div className="max-w-6xl mx-auto px-4 py-6">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <h1 className="text-3xl font-bold text-gray-900">Quarterly Earning Field Mapper</h1>
+                                    <p className="text-gray-600 mt-1">Parameterized Excel field mapping tool for quarterly earnings</p>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                    <div className={`w-3 h-3 rounded-full ${
+                                        backendStatus === 'connected' ? 'bg-green-500' :
+                                        backendStatus === 'disconnected' ? 'bg-red-500' : 'bg-yellow-500'
+                                    }`}></div>
+                                    <span className="text-sm text-gray-600">
+                                        Backend: {backendStatus === 'connected' ? 'Connected' : 
+                                                backendStatus === 'disconnected' ? 'Disconnected' : 'Checking...'}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+
+                    <div className="max-w-6xl mx-auto px-4 py-8">
+                        <div className="bg-white rounded-lg shadow-sm border p-6">
+                            <div className="text-center space-y-6">
+                                <div>
+                                    <svg className="w-16 h-16 text-blue-500 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                    </svg>
+                                    <h2 className="text-2xl font-bold text-gray-900">Field Mapping Application</h2>
+                                    <p className="text-gray-600 mt-2">
+                                        Upload Excel files and CSV mappings to automatically populate quarterly earnings data
+                                    </p>
+                                </div>
+
+                                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                                    <h3 className="text-sm font-medium text-blue-800 mb-2">Parameter Guide</h3>
+                                    <div className="text-sm text-blue-700 space-y-1">
+                                        <p>• <strong>--column</strong> = DESTINATION column (where to write data)</p>
+                                        <p>• <strong>--data-column</strong> = SOURCE column (where to read data)</p>
+                                        <p>• Example: --column 75 --data-column "BR" means BR → Column 75</p>
+                                    </div>
+                                </div>
+
+                                <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                                    <h3 className="text-sm font-medium text-green-800 mb-2">Application Features</h3>
+                                    <div className="grid grid-cols-2 gap-4 text-sm text-green-700">
+                                        <div>• 134 verified field mappings</div>
+                                        <div>• Q1/Q2 historical verification</div>
+                                        <div>• Parameterized mapping engine</div>
+                                        <div>• Complete audit trail</div>
+                                        <div>• Generic mapping format</div>
+                                        <div>• Source tracking</div>
+                                    </div>
+                                </div>
+
+                                {backendStatus === 'connected' && (
+                                    <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                                        <p className="text-green-800 font-medium">✅ Backend Connected Successfully!</p>
+                                        <p className="text-green-700 text-sm mt-1">Ready for file upload and mapping operations</p>
+                                    </div>
+                                )}
+
+                                {backendStatus === 'disconnected' && (
+                                    <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                                        <p className="text-red-800 font-medium">❌ Backend Disconnected</p>
+                                        <p className="text-red-700 text-sm mt-1">Please ensure the Railway backend is deployed and running</p>
+                                    </div>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+
+                    <footer className="bg-white border-t mt-12">
+                        <div className="max-w-6xl mx-auto px-4 py-6 text-center">
+                            <p className="text-sm text-gray-500">
+                                Quarterly Earning Field Mapper v1.0.0 - Railway Project: {RAILWAY_PROJECT_ID}
+                            </p>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>

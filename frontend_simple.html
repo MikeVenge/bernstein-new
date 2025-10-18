@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarterly Earning Field Mapper - Simple Frontend</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useCallback } = React;
+
+        function App() {
+            const [currentStep, setCurrentStep] = useState(1);
+            const [jobId, setJobId] = useState(null);
+            const [uploadedFiles, setUploadedFiles] = useState({});
+            const [mappingConfig, setMappingConfig] = useState({
+                targetColumn: 71,
+                dataColumn: 'CO'
+            });
+            const [executionResult, setExecutionResult] = useState(null);
+            const [backendStatus, setBackendStatus] = useState('checking');
+
+            // Check backend status on load
+            React.useEffect(() => {
+                const checkBackend = async () => {
+                    try {
+                        await axios.get('http://localhost:8000/');
+                        setBackendStatus('connected');
+                    } catch (err) {
+                        setBackendStatus('disconnected');
+                    }
+                };
+                checkBackend();
+            }, []);
+
+            const FileUpload = () => {
+                const [files, setFiles] = useState({
+                    source: null,
+                    destination: null,
+                    mapping: null
+                });
+                const [uploading, setUploading] = useState(false);
+                const [error, setError] = useState(null);
+
+                const handleFileChange = (fileType, event) => {
+                    const file = event.target.files[0];
+                    if (file) {
+                        setFiles(prev => ({ ...prev, [fileType]: file }));
+                        setError(null);
+                    }
+                };
+
+                const handleUpload = async () => {
+                    if (!files.source || !files.destination || !files.mapping) {
+                        setError('Please select all three files');
+                        return;
+                    }
+
+                    setUploading(true);
+                    setError(null);
+
+                    try {
+                        // Check if backend is running first
+                        await axios.get('http://localhost:8000/');
+                        
+                        const formData = new FormData();
+                        formData.append('source_file', files.source);
+                        formData.append('destination_file', files.destination);
+                        formData.append('mapping_file', files.mapping);
+
+                        const response = await axios.post('http://localhost:8000/api/upload-files', formData, {
+                            headers: {
+                                'Content-Type': 'multipart/form-data',
+                            },
+                        });
+
+                        if (response.data.status === 'success') {
+                            setJobId(response.data.job_id);
+                            setUploadedFiles(response.data.files);
+                            setCurrentStep(2);
+                        } else {
+                            setError('Upload failed: ' + response.data.message);
+                        }
+                    } catch (err) {
+                        setError('Upload failed: ' + (err.response?.data?.detail || err.message));
+                    } finally {
+                        setUploading(false);
+                    }
+                };
+
+                return (
+                    <div className="space-y-6">
+                        <div>
+                            <h2 className="text-2xl font-bold text-gray-900 mb-2">Upload Files</h2>
+                            <p className="text-gray-600">
+                                Upload your source Excel file, destination Excel file, and CSV mapping file.
+                            </p>
+                        </div>
+
+                        {error && (
+                            <div className="bg-red-50 border border-red-200 rounded-md p-4">
+                                <p className="text-sm text-red-600">{error}</p>
+                            </div>
+                        )}
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                    Source File (.xlsx)
+                                </label>
+                                <input
+                                    type="file"
+                                    accept=".xlsx,.xls"
+                                    onChange={(e) => handleFileChange('source', e)}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                />
+                                {files.source && (
+                                    <p className="text-xs text-green-600 mt-1">✅ {files.source.name}</p>
+                                )}
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                    Destination File (.xlsx)
+                                </label>
+                                <input
+                                    type="file"
+                                    accept=".xlsx,.xls"
+                                    onChange={(e) => handleFileChange('destination', e)}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                />
+                                {files.destination && (
+                                    <p className="text-xs text-green-600 mt-1">✅ {files.destination.name}</p>
+                                )}
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                    Mapping File (.csv)
+                                </label>
+                                <input
+                                    type="file"
+                                    accept=".csv"
+                                    onChange={(e) => handleFileChange('mapping', e)}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                />
+                                {files.mapping && (
+                                    <p className="text-xs text-green-600 mt-1">✅ {files.mapping.name}</p>
+                                )}
+                            </div>
+                        </div>
+
+                        <div className="bg-blue-50 border border-blue-200 rounded-md p-4">
+                            <h3 className="text-sm font-medium text-blue-800 mb-2">Parameter Clarification</h3>
+                            <ul className="text-sm text-blue-700 space-y-1">
+                                <li>• <strong>--column</strong> = DESTINATION column (where to write data)</li>
+                                <li>• <strong>--data-column</strong> = SOURCE column (where to read data)</li>
+                                <li>• Example: --column 75 --data-column "BR" means BR → Column 75</li>
+                            </ul>
+                        </div>
+
+                        <div className="flex justify-center">
+                            <button
+                                onClick={handleUpload}
+                                disabled={!files.source || !files.destination || !files.mapping || uploading}
+                                className={`px-8 py-3 rounded-md font-medium ${
+                                    !files.source || !files.destination || !files.mapping || uploading
+                                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                                        : 'bg-blue-600 text-white hover:bg-blue-700'
+                                }`}
+                            >
+                                {uploading ? 'Uploading...' : 'Upload Files & Continue'}
+                            </button>
+                        </div>
+                    </div>
+                );
+            };
+
+            const MappingConfiguration = () => {
+                const [executing, setExecuting] = useState(false);
+                const [result, setResult] = useState(null);
+                const [error, setError] = useState(null);
+
+                const handleConfigChange = (field, value) => {
+                    setMappingConfig(prev => ({ ...prev, [field]: value }));
+                };
+
+                const executeMapping = async () => {
+                    try {
+                        setExecuting(true);
+                        setError(null);
+
+                        const formData = new FormData();
+                        formData.append('target_column', mappingConfig.targetColumn.toString());
+                        formData.append('data_column', mappingConfig.dataColumn);
+
+                        const response = await axios.post(`http://localhost:8000/api/execute-mapping/${jobId}`, formData);
+
+                        if (response.data.status === 'success') {
+                            setResult(response.data.result);
+                            setExecutionResult(response.data.result);
+                            setCurrentStep(3);
+                        } else {
+                            setError(response.data.message || 'Execution failed');
+                        }
+                    } catch (err) {
+                        setError(err.response?.data?.detail || err.message);
+                    } finally {
+                        setExecuting(false);
+                    }
+                };
+
+                return (
+                    <div className="space-y-6">
+                        <div>
+                            <h2 className="text-2xl font-bold text-gray-900 mb-2">Configure Mapping</h2>
+                            <p className="text-gray-600">Set your target column and data source column.</p>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                    Target Column (DESTINATION)
+                                </label>
+                                <select
+                                    value={mappingConfig.targetColumn}
+                                    onChange={(e) => handleConfigChange('targetColumn', parseInt(e.target.value))}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                >
+                                    <option value={70}>Column 70 (BR)</option>
+                                    <option value={71}>Column 71 (BS)</option>
+                                    <option value={72}>Column 72 (BT)</option>
+                                    <option value={73}>Column 73 (BU)</option>
+                                    <option value={75}>Column 75 (BW)</option>
+                                    <option value={80}>Column 80 (CB)</option>
+                                </select>
+                                <p className="text-xs text-gray-500 mt-1">Where to write data in destination file</p>
+                            </div>
+
+                            <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-2">
+                                    Data Column (SOURCE)
+                                </label>
+                                <select
+                                    value={mappingConfig.dataColumn}
+                                    onChange={(e) => handleConfigChange('dataColumn', e.target.value)}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                >
+                                    <option value="BR">BR (Column 70) - Q1 data</option>
+                                    <option value="BS">BS (Column 71) - Q2 data</option>
+                                    <option value="CO">CO (Column 93) - Current default</option>
+                                    <option value="BT">BT (Column 72)</option>
+                                </select>
+                                <p className="text-xs text-gray-500 mt-1">Where to read data from source file</p>
+                            </div>
+                        </div>
+
+                        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                            <h3 className="text-sm font-medium text-blue-800 mb-2">Data Flow</h3>
+                            <div className="text-center">
+                                <span className="bg-blue-100 px-3 py-1 rounded">Source Column {mappingConfig.dataColumn}</span>
+                                <span className="mx-4">→</span>
+                                <span className="bg-green-100 px-3 py-1 rounded">Destination Column {mappingConfig.targetColumn}</span>
+                            </div>
+                            <p className="text-xs text-blue-600 text-center mt-2">
+                                Source tracking will go to Column {mappingConfig.targetColumn + 1}
+                            </p>
+                        </div>
+
+                        {error && (
+                            <div className="bg-red-50 border border-red-200 rounded-md p-4">
+                                <p className="text-sm text-red-600">{error}</p>
+                            </div>
+                        )}
+
+                        {result && (
+                            <div className="bg-green-50 border border-green-200 rounded-md p-4">
+                                <h3 className="text-sm font-medium text-green-800">Execution Complete!</h3>
+                                <p className="text-sm text-green-700">
+                                    {result.values_populated} fields populated ({result.success_rate?.toFixed(1)}% success rate)
+                                </p>
+                            </div>
+                        )}
+
+                        <div className="flex justify-center space-x-4">
+                            <button
+                                onClick={() => setCurrentStep(1)}
+                                className="px-6 py-2 text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+                            >
+                                Back
+                            </button>
+                            <button
+                                onClick={executeMapping}
+                                disabled={executing}
+                                className={`px-8 py-3 rounded-md font-medium ${
+                                    executing
+                                        ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                                        : 'bg-blue-600 text-white hover:bg-blue-700'
+                                }`}
+                            >
+                                {executing ? 'Executing...' : 'Execute Mapping'}
+                            </button>
+                        </div>
+                    </div>
+                );
+            };
+
+            const ResultsDisplay = () => {
+                const downloadFile = async (fileType) => {
+                    try {
+                        const response = await axios.get(`http://localhost:8000/api/download-result/${jobId}/${fileType}`, {
+                            responseType: 'blob'
+                        });
+
+                        const url = window.URL.createObjectURL(new Blob([response.data]));
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.setAttribute('download', 
+                            fileType === 'excel' ? executionResult?.output_file || 'populated_file.xlsx' :
+                            fileType === 'audit' ? executionResult?.audit_file || 'audit_trail.csv' :
+                            `results_${jobId}.zip`
+                        );
+                        document.body.appendChild(link);
+                        link.click();
+                        link.remove();
+                        window.URL.revokeObjectURL(url);
+                    } catch (err) {
+                        alert('Download failed: ' + (err.response?.data?.detail || err.message));
+                    }
+                };
+
+                return (
+                    <div className="space-y-6">
+                        <div>
+                            <h2 className="text-2xl font-bold text-gray-900 mb-2">Results</h2>
+                            <p className="text-gray-600">Download your populated files and audit trail.</p>
+                        </div>
+
+                        <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                            <h3 className="text-lg font-medium text-green-800">Mapping Completed Successfully!</h3>
+                            <div className="grid grid-cols-4 gap-4 mt-3">
+                                <div className="text-center">
+                                    <div className="text-2xl font-bold text-green-600">{executionResult?.mappings_processed}</div>
+                                    <div className="text-sm text-gray-600">Processed</div>
+                                </div>
+                                <div className="text-center">
+                                    <div className="text-2xl font-bold text-green-600">{executionResult?.values_populated}</div>
+                                    <div className="text-sm text-gray-600">Populated</div>
+                                </div>
+                                <div className="text-center">
+                                    <div className="text-2xl font-bold text-green-600">{executionResult?.success_rate?.toFixed(1)}%</div>
+                                    <div className="text-sm text-gray-600">Success Rate</div>
+                                </div>
+                                <div className="text-center">
+                                    <div className="text-2xl font-bold text-green-600">{executionResult?.errors?.length || 0}</div>
+                                    <div className="text-sm text-gray-600">Errors</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <button
+                                onClick={() => downloadFile('excel')}
+                                className="px-4 py-3 bg-green-600 text-white rounded-md font-medium hover:bg-green-700"
+                            >
+                                📊 Download Excel File
+                            </button>
+                            
+                            <button
+                                onClick={() => downloadFile('audit')}
+                                className="px-4 py-3 bg-blue-600 text-white rounded-md font-medium hover:bg-blue-700"
+                            >
+                                📋 Download Audit Trail
+                            </button>
+                            
+                            <button
+                                onClick={() => downloadFile('all')}
+                                className="px-4 py-3 bg-purple-600 text-white rounded-md font-medium hover:bg-purple-700"
+                            >
+                                📦 Download All (ZIP)
+                            </button>
+                        </div>
+
+                        <div className="flex justify-center">
+                            <button
+                                onClick={() => {
+                                    setCurrentStep(1);
+                                    setJobId(null);
+                                    setUploadedFiles({});
+                                    setExecutionResult(null);
+                                }}
+                                className="px-6 py-2 text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50"
+                            >
+                                Start New Mapping
+                            </button>
+                        </div>
+                    </div>
+                );
+            };
+
+            return (
+                <div className="min-h-screen bg-gray-50">
+                    <header className="bg-white shadow-sm border-b">
+                        <div className="max-w-6xl mx-auto px-4 py-6">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <h1 className="text-3xl font-bold text-gray-900">Quarterly Earning Field Mapper</h1>
+                                    <p className="text-gray-600 mt-1">Parameterized Excel field mapping tool for quarterly earnings</p>
+                                </div>
+                                <div className="flex items-center space-x-2">
+                                    <div className={`w-3 h-3 rounded-full ${
+                                        backendStatus === 'connected' ? 'bg-green-500' :
+                                        backendStatus === 'disconnected' ? 'bg-red-500' : 'bg-yellow-500'
+                                    }`}></div>
+                                    <span className="text-sm text-gray-600">
+                                        Backend: {backendStatus === 'connected' ? 'Connected' : 
+                                                backendStatus === 'disconnected' ? 'Disconnected' : 'Checking...'}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+
+                    <div className="max-w-6xl mx-auto px-4 py-8">
+                        <div className="flex items-center justify-center mb-8 space-x-8">
+                            {[1, 2, 3].map((step) => (
+                                <div key={step} className="flex items-center">
+                                    <div className={`flex items-center justify-center w-8 h-8 rounded-full border-2 ${
+                                        currentStep >= step 
+                                            ? 'bg-blue-500 border-blue-500 text-white' 
+                                            : 'bg-white border-gray-300 text-gray-500'
+                                    }`}>
+                                        {step}
+                                    </div>
+                                    <span className={`ml-2 text-sm ${currentStep >= step ? 'text-gray-900' : 'text-gray-500'}`}>
+                                        {step === 1 ? 'Upload' : step === 2 ? 'Configure' : 'Results'}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="bg-white rounded-lg shadow-sm border p-6">
+                            {currentStep === 1 && <FileUpload />}
+                            {currentStep === 2 && <MappingConfiguration />}
+                            {currentStep === 3 && <ResultsDisplay />}
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "pip install -r requirements.txt"
+  },
+  "deploy": {
+    "startCommand": "./start.sh",
+    "healthcheckPath": "/",
+    "healthcheckTimeout": 100,
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 10
+  },
+  "environments": {
+    "production": {
+      "variables": {
+        "RAILWAY_PROJECT_ID": "a33c9b9d-889b-427d-aba8-6240ca22d770",
+        "RAILWAY_ENVIRONMENT": "production",
+        "CORS_ORIGINS": "https://bernstein-eight.vercel.app"
+      }
+    }
+  }
+}

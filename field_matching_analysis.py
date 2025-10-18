@@ -48,9 +48,9 @@ def get_latest_quarter_data(source_file: str, target_file: str) -> Tuple[Dict, D
     source_wb = openpyxl.load_workbook(source_file, data_only=True)
     key_metrics_sheet = source_wb['Key Metrics']
     
-    # Find Q2 2024 column in Key Metrics (column 93 = 2024-06-30)
-    source_latest_col = 93  # Q2 2024 column
-    print(f"Using source column {source_latest_col} for Q2 2024")
+Revenue by application:    # Use Column CN (92) for Q1 2024 in Key Metrics
+    source_latest_col = 92  # Column CN = Q1 2024
+    print(f"Using source column {source_latest_col} (CN) for Q1 2024")
     
     # Get source data
     source_data = {}
@@ -69,26 +69,9 @@ def get_latest_quarter_data(source_file: str, target_file: str) -> Tuple[Dict, D
     target_wb = openpyxl.load_workbook(target_file, data_only=True)
     reported_sheet = target_wb['Reported']
     
-    # Check multiple columns for the best available data in Reported tab
-    # Column 70 = Q1 2024, Column 71 = Q2 2024 (but might be empty)
-    target_cols_to_try = [71, 70, 69]  # Q2 2024, Q1 2024, Q4 2023
-    target_latest_col = None
-    
-    # Test which column has the most data
-    for test_col in target_cols_to_try:
-        data_count = 0
-        for test_row in range(10, 50):  # Sample some rows
-            if reported_sheet.cell(test_row, test_col).value is not None:
-                data_count += 1
-        print(f"Column {test_col} has {data_count} non-empty values in sample")
-        if data_count > 5:  # If we find a column with decent data
-            target_latest_col = test_col
-            break
-    
-    if not target_latest_col:
-        target_latest_col = 70  # Fallback to Q1 2024
-    
-    print(f"Using target column {target_latest_col} for latest available quarter")
+    # Use Column BR (70) for Q1 2024 in Reported tab
+    target_latest_col = 70  # Column BR = Q1 2024
+    print(f"Using target column {target_latest_col} (BR) for Q1 2024")
     
     # Get target data
     target_data = {}

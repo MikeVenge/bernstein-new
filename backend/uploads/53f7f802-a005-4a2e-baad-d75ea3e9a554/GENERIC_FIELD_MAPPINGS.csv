@@ -1,0 +1,114 @@
+Dest_Row,Dest_Field,Dest_Section,Source_Sheet,Source_Row,Source_Field,Source_Column,Mapping_Type,Transformation,Confidence,Validation,Notes
+12,United States and other North America,Segment Information,Key Metrics,6,North America,CO,Geographic_Translation,DIRECT_COPY,HIGH,Historical_Data,Geographic translation: United States and other North America → North America
+13,Germany,Segment Information,Key Metrics,7,Germany,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+14,Other including Eastern Europe/CIS,Segment Information,Key Metrics,8,Other Europe,CO,Geographic_Translation,DIRECT_COPY,HIGH,Historical_Data,Geographic translation: Eastern Europe/CIS → Other Europe
+15,China,Segment Information,Key Metrics,9,China,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+16,Japan,Segment Information,Key Metrics,10,Japan,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+17,Other Asian countries,Segment Information,Key Metrics,11,Other Asia,CO,Geographic_Translation,DIRECT_COPY,HIGH,Historical_Data,Geographic translation: Other Asian countries → Other Asia
+18,Rest of World,Segment Information,Key Metrics,12,Rest of World,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+19,Total,Segment Information,Key Metrics,13,Total revenue,CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Total field mapping
+22,Materials Processing,Segment Information,Key Metrics,26,Materials processing,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+23,Other application of which,Segment Information,Key Metrics,27,Other applications,CO,Semantic_Match,DIRECT_COPY,HIGH,Field_Names,Semantic match: Other application of which → Other applications
+27,Total,Segment Information,Key Metrics,31,Total revenue,CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Total field mapping
+30,High-power CW lasers (1 Kilowatt or Greater),Segment Information,Key Metrics,46,High-power CW lasers (1 Kilowatt or Greater),CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+31,Medium-power CW lasers (Less Than 1 Kilowatt),Segment Information,Key Metrics,47,Medium-power CW lasers (Less Than 1 Kilowatt),CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+32,Pulsed lasers,Segment Information,Key Metrics,48,Pulsed lasers,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+33,QCW lasers,Segment Information,Key Metrics,49,QCW lasers,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+34,Systems,Segment Information,Key Metrics,50,Laser and Non-Laser Systems,CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: Systems → Laser and Non-Laser Systems
+35,Other revenue (amplifiers service parts accessories and change in deferred),Segment Information,Key Metrics,51,Other revenue (amplifiers service parts accessories and change in deferred),CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+36,Total,Segment Information,Key Metrics,52,Total revenue,CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Total field mapping
+48,United States and other North America,Segment Information,Key Metrics,16,North America,CO,Geographic_Translation,PERCENTAGE_VALUE,HIGH,Historical_Data,Geographic translation - percentage format
+49,Germany,Segment Information,Key Metrics,17,Germany,CO,Exact_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Exact field name match - percentage format
+50,Other including Eastern Europe/CIS,Segment Information,Key Metrics,18,Other Europe,CO,Geographic_Translation,PERCENTAGE_VALUE,HIGH,Historical_Data,Geographic translation - percentage format
+51,China,Segment Information,Key Metrics,19,China,CO,Exact_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Exact field name match - percentage format
+52,Japan,Segment Information,Key Metrics,20,Japan,CO,Exact_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Exact field name match - percentage format
+53,Other Asian countries,Segment Information,Key Metrics,21,Other Asia,CO,Geographic_Translation,PERCENTAGE_VALUE,HIGH,Historical_Data,Geographic translation - percentage format
+54,Rest of World,Segment Information,Key Metrics,22,Rest of World,CO,Exact_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Exact field name match - percentage format
+55,Total,Segment Information,Key Metrics,23,Total revenue,CO,Semantic_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Total field mapping - percentage format
+58,Materials Processing,Segment Information,Key Metrics,34,Materials processing,CO,Exact_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Exact field name match - percentage format
+63,Total,Segment Information,Key Metrics,43,Total revenue,CO,Semantic_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Total field mapping - percentage format
+66,High-power CW lasers (1 Kilowatt or Greater),Segment Information,Key Metrics,55,High-power CW lasers (1 Kilowatt or Greater),CO,Exact_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Exact field name match - percentage format
+67,Medium-power CW lasers (Less Than 1 Kilowatt),Segment Information,Key Metrics,56,Medium-power CW lasers (Less Than 1 Kilowatt),CO,Exact_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Exact field name match - percentage format
+68,Pulsed lasers,Segment Information,Key Metrics,57,Pulsed lasers,CO,Exact_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Exact field name match - percentage format
+69,QCW lasers,Segment Information,Key Metrics,58,QCW lasers,CO,Exact_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Exact field name match - percentage format
+70,Systems,Segment Information,Key Metrics,59,Laser and Non-Laser Systems,CO,Semantic_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Semantic match - percentage format
+71,Other revenue (amplifiers service parts accessories and change in deferred),Segment Information,Key Metrics,60,Other revenue (amplifiers service parts accessories and change in deferred),CO,Exact_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Exact field name match - percentage format
+72,Total,Segment Information,Key Metrics,61,Total revenue,CO,Semantic_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Total field mapping - percentage format
+79,Net Sales,Income Statement,Key Metrics,13,Total revenue,CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: Net Sales → Total revenue
+80,Cost of sales,Income Statement,Income Statement,6,Cost of sales,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+81,Gross profit,Income Statement,Income Statement,7,Gross profit,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+82,Sales and marketing,Income Statement,Income Statement,10,Sales and marketing,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+83,Research and development,Income Statement,Income Statement,11,Research and development,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+84,General and administrative,Income Statement,Income Statement,12,General and administrative,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+85,Loss (gain) on foreign exchange and others,Income Statement,Income Statement,17,Loss (gain) on foreign exchange,CO,Semantic_Match,DIRECT_COPY,HIGH,Field_Names,Semantic match: broader category mapping
+86,Total operating expenses,Income Statement,Income Statement,18,Total operating expenses,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+87,Operating Income,Income Statement,Income Statement,20,Operating income (loss),CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: Operating Income → Operating income (loss)
+88,Interest income (expense) net,Income Statement,Income Statement,23,Interest income (expense) net,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+89,Other income (expense) net,Income Statement,Income Statement,24,Other income (expense) net,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+90,Total other income (expense) net,Income Statement,Income Statement,25,Total other income (expense),CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: slight name variation
+91,Income before provision for income taxes,Income Statement,Income Statement,27,Income (loss) before provision for income taxes,CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: Income before provision → Income (loss) before provision
+92,Provision for income taxes,Income Statement,Income Statement,28,Provision for income taxes,CO,Exact_Match,DIRECT_COPY,HIGH,Field_Names,Exact field name match
+93,Net income,Income Statement,Income Statement,30,Net income (loss),CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: Net income → Net income (loss)
+95,Net income attributable to IPG Photonics Corporation,Income Statement,Income Statement,33,Net income (loss) attributable to IPG Photonics Corporation,CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: Net income attributable variations
+97,Basic,Income Statement,Income Statement,36,Basic,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+98,Diluted,Income Statement,Income Statement,37,Diluted,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+100,Basic,Income Statement,Income Statement,40,Basic,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+101,Diluted,Income Statement,Income Statement,41,Diluted,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+123,Cash and cash equivalents,Balance Sheet,Balance Sheet,7,Cash and cash equivalents,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+124,Short-term investments,Balance Sheet,Balance Sheet,8,Short-term investments,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+125,Accounts receivable net,Balance Sheet,Balance Sheet,9,Accounts receivable net,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+126,Inventories,Balance Sheet,Balance Sheet,10,Inventories,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+127,Prepaid income taxes,Balance Sheet,Balance Sheet,14,Prepaid income taxes,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+128,Prepaid expenses and others,Balance Sheet,Balance Sheet,15,Prepaid expenses and other current assets,CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: Prepaid expenses variations
+130,Total current assets,Balance Sheet,Balance Sheet,16,Total Current Assets,CO,Exact_Match,DIRECT_COPY,HIGH,Field_Names,Exact field name match
+131,Deferred income taxes net,Balance Sheet,Balance Sheet,18,Deferred income taxes net,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+132,Goodwill,Balance Sheet,Balance Sheet,19,Goodwill,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+133,Intangible assets net,Balance Sheet,Balance Sheet,20,Intangible assets net,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+134,Property plant and equipment net,Balance Sheet,Balance Sheet,21,Property plant and equipment net,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+135,Other non-current assets,Balance Sheet,Balance Sheet,22,Other assets,CO,Semantic_Match,DIRECT_COPY,HIGH,Field_Names,Semantic match: broader category mapping
+136,Total assets,Balance Sheet,Balance Sheet,23,Total assets,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+139,Accounts payable,Balance Sheet,Balance Sheet,29,Accounts payable,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+140,Accrued expenses and other liabilities,Balance Sheet,Balance Sheet,30+31+32+33,Accrued compensation (composite),CO,Composite_Match,SUM_FIELDS,HIGH,Field_Names,Composite field - sum multiple Balance Sheet components
+141,Income taxes payable,Balance Sheet,Balance Sheet,34,Income taxes payable,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+143,Total current liabilities,Balance Sheet,Balance Sheet,35,Total Current Liabilities,CO,Exact_Match,DIRECT_COPY,HIGH,Field_Names,Exact field name match
+144,Deferred income taxes and other non-current liabilities,Balance Sheet,Balance Sheet,37,Other long-term liabilities and deferred income taxes,CO,Semantic_Match,DIRECT_COPY,MEDIUM,Field_Names,Semantic match: deferred income taxes variations
+145,Long-term debt net of current portion,Balance Sheet,Balance Sheet,38,Long-term debt net of current portion,CO,Exact_Match,DIRECT_COPY,HIGH,Field_Names,Exact field name match
+146,Total liabilities,Balance Sheet,Balance Sheet,39,Total Liabilities,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+149,Treasury stock at cost,Balance Sheet,Balance Sheet,45,Treasury stock at cost,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+150,Additional paid-in capital,Balance Sheet,Balance Sheet,46,Additional paid-in capital,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+151,Retained earnings,Balance Sheet,Balance Sheet,48,Retained earnings,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+152,Accumulated other comprehensive loss,Balance Sheet,Balance Sheet,49,Accumulated other comprehensive gain (loss),CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: comprehensive loss/gain variations
+153,Total IPG Photonics Corporation equity,Balance Sheet,Balance Sheet,50,Total IPG Photonics Corporation equity,CO,Exact_Match,DIRECT_COPY,HIGH,Field_Names,Exact field name match
+154,Noncontrolling interests,Balance Sheet,Balance Sheet,52,Noncontrolling interests,CO,Exact_Match,DIRECT_COPY,HIGH,Field_Names,Exact field name match
+155,Total equity,Balance Sheet,Balance Sheet,53,Total equity,CO,Exact_Match,DIRECT_COPY,HIGH,Field_Names,Exact field name match
+156,Total equity and liabilities,Balance Sheet,Balance Sheet,54,Total liabilities and equity,CO,Semantic_Match,DIRECT_COPY,HIGH,Field_Names,Semantic match: order variation in field name
+171,Net income,Cash Flow Statement,Cash Flows,6,Net income (loss),CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: Net income → Net income (loss)
+173,Depreciation and amortization,Cash Flow Statement,Key Metrics,47,Medium-power CW lasers (Less Than 1 Kilowatt),CO,Manual_Match,DIRECT_COPY,HIGH,Historical_Data,Manual mapping - depreciation matched to product line
+174,Deferred income taxes,Cash Flow Statement,Cash Flows,11,Deferred income taxes,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+175,Stock-based compensation,Cash Flow Statement,Cash Flows,12,Stock-based compensation,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+177,Other,Cash Flow Statement,Cash Flows,15,Other,CO,Exact_Match,DIRECT_COPY,HIGH,Field_Names,Exact field name match
+178,Provisions for inventory warranty and bad debt,Cash Flow Statement,Cash Flows,16,Provisions for inventory warranty & bad debt,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+180,Accounts receivable,Cash Flow Statement,Cash Flows,18,Accounts receivable,CO,Exact_Match,DIRECT_COPY,HIGH,Field_Names,Exact field name match
+181,Inventories,Cash Flow Statement,Cash Flows,19,Inventories,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+182,Prepaid expenses and other current assets,Cash Flow Statement,Cash Flows,20,Prepaid expenses and other current assets,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+183,Accounts payable,Cash Flow Statement,Cash Flows,21,Accounts payable,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+184,Accrued expenses and other liabilities,Cash Flow Statement,Cash Flows,22,Accrued expenses and other liabilities,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+185,Income and other taxes payable,Cash Flow Statement,Cash Flows,23,Income and other taxes payable,CO,Exact_Match,DIRECT_COPY,HIGH,Field_Names,Exact field name match
+187,Net cash provided by operating activities,Cash Flow Statement,Cash Flows,24,Net cash (used in) provided by operating activities,CO,Semantic_Match,DIRECT_COPY,HIGH,Field_Names,Semantic match: Net cash provided → Net cash (used in) provided
+190,Purchases of property plant and equipment,Cash Flow Statement,Cash Flows,27,Purchases of and deposits on property plant and equipment,CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: purchases variations
+192,Proceeds from sales of property plant and equipment,Cash Flow Statement,Cash Flows,29,Proceeds from sales of property plant and equipment,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+193,Proceeds from short-term investments,Cash Flow Statement,Cash Flows,30,Purchases of short-term investments,CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: Proceeds vs Purchases (opposite operations)
+194,Purchases of short-term investments,Cash Flow Statement,Cash Flows,31,Proceeds from short-term investments,CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: Purchases vs Proceeds (opposite operations)
+196,Others,Cash Flow Statement,Cash Flows,34,Other,CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: Others → Other
+197,Net cash used in investing activities,Cash Flow Statement,Cash Flows,35,Net cash (used in) provided by investing activities,CO,Semantic_Match,DIRECT_COPY,HIGH,Field_Names,Semantic match: Net cash investing activities
+205,Principal payments on long-term borrowings,Cash Flow Statement,Cash Flows,42,Principal payments on long-term borrowings,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+206,Exercise of employee stock options and issuances under employee stock purchase plan,Cash Flow Statement,Cash Flows,43,Exercise of employee stock options and issuances under employee stock purchase plan,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+207,Tax benefit from exercise of employee stock options,Cash Flow Statement,Cash Flows,44,Purchase of treasury stock at cost,CO,Manual_Match,DIRECT_COPY,HIGH,Historical_Data,Manual mapping - tax benefit to treasury stock purchase
+212,Net cash provided by financing activities,Cash Flow Statement,Cash Flows,49,Net cash (used in) provided by financing activities,CO,Semantic_Match,DIRECT_COPY,HIGH,Field_Names,Semantic match: Net cash financing activities
+214,Effect of changes in exchange rates on cash and cash equivalents,Cash Flow Statement,Cash Flows,51,Effect of changes in exchange rates on cash cash equivalents and restricted cash,CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: exchange rates variations
+215,Net increase in cash and cash equivalents,Cash Flow Statement,Cash Flows,53,Net increase (decrease) in cash cash equivalents and restricted cash,CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: increase vs increase/decrease
+216,Cash and cash equivalents - Beginning of period,Cash Flow Statement,Cash Flows,54,Cash and cash equivalents — Beginning of period,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+217,Cash and cash equivalents - Ending balance,Cash Flow Statement,Cash Flows,55,Cash cash equivalents and restricted cash — End of period,CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: ending balance variations
+219,Cash and cash equivalents - End of period,Cash Flow Statement,Cash Flows,57,Cash and cash equivalents — End of period,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+221,Cash paid for interest,Cash Flow Statement,Cash Flows,60,Cash paid for interest,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+222,Cash paid for income taxes,Cash Flow Statement,Cash Flows,61,Cash paid for income taxes,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
