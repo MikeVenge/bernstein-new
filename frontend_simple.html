@@ -31,7 +31,7 @@
             React.useEffect(() => {
                 const checkBackend = async () => {
                     try {
-                        await axios.get('http://localhost:8000/');
+                        await axios.get('https://backend-production-a33c.up.railway.app/');
                         setBackendStatus('connected');
                     } catch (err) {
                         setBackendStatus('disconnected');
@@ -68,14 +68,14 @@
 
                     try {
                         // Check if backend is running first
-                        await axios.get('http://localhost:8000/');
+                        await axios.get('https://backend-production-a33c.up.railway.app/');
                         
                         const formData = new FormData();
                         formData.append('source_file', files.source);
                         formData.append('destination_file', files.destination);
                         formData.append('mapping_file', files.mapping);
 
-                        const response = await axios.post('http://localhost:8000/api/upload-files', formData, {
+                        const response = await axios.post('https://backend-production-a33c.up.railway.app/api/upload-files', formData, {
                             headers: {
                                 'Content-Type': 'multipart/form-data',
                             },
@@ -201,7 +201,7 @@
                         formData.append('target_column', mappingConfig.targetColumn.toString());
                         formData.append('data_column', mappingConfig.dataColumn);
 
-                        const response = await axios.post(`http://localhost:8000/api/execute-mapping/${jobId}`, formData);
+                        const response = await axios.post(`https://backend-production-a33c.up.railway.app/api/execute-mapping/${jobId}`, formData);
 
                         if (response.data.status === 'success') {
                             setResult(response.data.result);
@@ -315,7 +315,7 @@
             const ResultsDisplay = () => {
                 const downloadFile = async (fileType) => {
                     try {
-                        const response = await axios.get(`http://localhost:8000/api/download-result/${jobId}/${fileType}`, {
+                        const response = await axios.get(`https://backend-production-a33c.up.railway.app/api/download-result/${jobId}/${fileType}`, {
                             responseType: 'blob'
                         });
 
