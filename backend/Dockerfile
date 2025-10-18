@@ -8,11 +8,8 @@ COPY requirements.txt .
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application files
-COPY main.py .
-COPY parameterized_field_mapper.py .
-COPY railway_config.py .
-COPY GENERIC_FIELD_MAPPINGS.csv .
+# Copy all application files
+COPY . .
 
 # Create necessary directories
 RUN mkdir -p uploads results
@@ -21,4 +18,4 @@ RUN mkdir -p uploads results
 EXPOSE 8000
 
 # Start the FastAPI application (Railway will set PORT env var)
-CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}
