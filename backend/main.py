@@ -87,8 +87,19 @@ app.add_middleware(
 # Create directories for file storage
 UPLOAD_DIR = Path("uploads")
 RESULTS_DIR = Path("results")
+MAPPINGS_DIR = Path("mappings")
 UPLOAD_DIR.mkdir(exist_ok=True)
 RESULTS_DIR.mkdir(exist_ok=True)
+MAPPINGS_DIR.mkdir(exist_ok=True)
+
+# Predefined mapping configurations
+PREDEFINED_MAPPINGS = {
+    "ipg_photonics": {
+        "label": "IPG Photonics",
+        "filename": "GENERIC_FIELD_MAPPINGS.csv",
+        "description": "Standard field mapping for IPG Photonics quarterly earnings"
+    }
+}
 
 
 class MappingJob:
@@ -132,15 +143,35 @@ async def health_check():
     }
 
 
+@app.get("/api/available-mappings")
+async def get_available_mappings():
+    """Get list of available predefined mapping files."""
+    mappings = []
+    for key, config in PREDEFINED_MAPPINGS.items():
+        mappings.append({
+            "key": key,
+            "label": config["label"],
+            "description": config["description"]
+        })
+    return {
+        "status": "ok",
+        "mappings": mappings
+    }
+
+
 @app.post("/api/upload-files")
 async def upload_files(
     source_file: UploadFile = File(...),
     destination_file: UploadFile = File(...),
-    mapping_file: UploadFile = File(...)
+    mapping_key: str = Form(...)
 ):
-    """Upload source, destination, and mapping files."""
+    """Upload source and destination files, use predefined mapping."""
     
     try:
+        # Validate mapping key
+        if mapping_key not in PREDEFINED_MAPPINGS:
+            raise HTTPException(status_code=400, detail=f"Invalid mapping key: {mapping_key}")
+        
         # Create new job
         job_id = str(uuid.uuid4())
         job = MappingJob(job_id)
@@ -154,8 +185,7 @@ async def upload_files(
         
         for file_obj, file_type in [
             (source_file, "source"),
-            (destination_file, "destination"), 
-            (mapping_file, "mapping")
+            (destination_file, "destination")
         ]:
             if not file_obj.filename:
                 raise HTTPException(status_code=400, detail=f"No {file_type} file provided")
@@ -172,6 +202,20 @@ async def upload_files(
                 "size": len(content)
             }
         
+        # Use predefined mapping file
+        mapping_config = PREDEFINED_MAPPINGS[mapping_key]
+        mapping_file_path = Path(__file__).parent / mapping_config["filename"]
+        
+        if not mapping_file_path.exists():
+            raise HTTPException(status_code=500, detail=f"Mapping file not found: {mapping_config['filename']}")
+        
+        files_saved["mapping"] = {
+            "filename": mapping_config["filename"],
+            "path": str(mapping_file_path),
+            "label": mapping_config["label"],
+            "key": mapping_key
+        }
+        
         job.files = files_saved
         job.status = "files_uploaded"
         active_jobs[job_id] = job
@@ -180,7 +224,11 @@ async def upload_files(
             "job_id": job_id,
             "status": "success",
             "message": "Files uploaded successfully",
-            "files": files_saved
+            "files": files_saved,
+            "mapping": {
+                "key": mapping_key,
+                "label": mapping_config["label"]
+            }
         }
         
     except Exception as e:

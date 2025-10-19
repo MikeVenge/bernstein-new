@@ -54,11 +54,27 @@
             const FileUpload = () => {
                 const [files, setFiles] = useState({
                     source: null,
-                    destination: null,
-                    mapping: null
+                    destination: null
                 });
+                const [mappingKey, setMappingKey] = useState('ipg_photonics');
+                const [availableMappings, setAvailableMappings] = useState([]);
                 const [uploading, setUploading] = useState(false);
                 const [error, setError] = useState(null);
+
+                // Load available mappings on mount
+                React.useEffect(() => {
+                    const loadMappings = async () => {
+                        try {
+                            const response = await axios.get(`${API_URL}/api/available-mappings`);
+                            if (response.data.status === 'ok') {
+                                setAvailableMappings(response.data.mappings);
+                            }
+                        } catch (err) {
+                            console.error('Failed to load mappings:', err);
+                        }
+                    };
+                    loadMappings();
+                }, []);
 
                 const handleFileChange = (fileType, event) => {
                     const file = event.target.files[0];
@@ -69,8 +85,8 @@
                 };
 
                 const handleUpload = async () => {
-                    if (!files.source || !files.destination || !files.mapping) {
-                        setError('Please select all three files');
+                    if (!files.source || !files.destination) {
+                        setError('Please select both source and destination files');
                         return;
                     }
 
@@ -81,7 +97,7 @@
                         const formData = new FormData();
                         formData.append('source_file', files.source);
                         formData.append('destination_file', files.destination);
-                        formData.append('mapping_file', files.mapping);
+                        formData.append('mapping_key', mappingKey);
 
                         // Direct Railway backend URL
                         const response = await axios.post(`${API_URL}/api/upload-files`, formData, {
@@ -152,35 +168,40 @@
 
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                                    Mapping File (.csv)
+                                    Mapping Template
                                 </label>
-                                <input
-                                    type="file"
-                                    accept=".csv"
-                                    onChange={(e) => handleFileChange('mapping', e)}
+                                <select
+                                    value={mappingKey}
+                                    onChange={(e) => setMappingKey(e.target.value)}
                                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                />
-                                {files.mapping && (
-                                    <p className="text-xs text-green-600 mt-1">✅ {files.mapping.name}</p>
-                                )}
+                                >
+                                    {availableMappings.map(mapping => (
+                                        <option key={mapping.key} value={mapping.key}>
+                                            {mapping.label}
+                                        </option>
+                                    ))}
+                                </select>
+                                <p className="text-xs text-gray-500 mt-1">
+                                    {availableMappings.find(m => m.key === mappingKey)?.description || 'Select a mapping template'}
+                                </p>
                             </div>
                         </div>
 
                         <div className="bg-blue-50 border border-blue-200 rounded-md p-4">
-                            <h3 className="text-sm font-medium text-blue-800 mb-2">Parameter Clarification</h3>
+                            <h3 className="text-sm font-medium text-blue-800 mb-2">File Requirements</h3>
                             <ul className="text-sm text-blue-700 space-y-1">
-                                <li>• <strong>--column</strong> = DESTINATION column (where to write data)</li>
-                                <li>• <strong>--data-column</strong> = SOURCE column (where to read data)</li>
-                                <li>• Example: --column 75 --data-column "BR" means BR → Column 75</li>
+                                <li>• <strong>Source File</strong>: Excel file (.xlsx) containing the data to map from</li>
+                                <li>• <strong>Destination File</strong>: Excel file (.xlsx) to populate with mapped data</li>
+                                <li>• <strong>Mapping Template</strong>: Predefined field mapping configuration</li>
                             </ul>
                         </div>
 
                         <div className="flex justify-center">
                             <button
                                 onClick={handleUpload}
-                                disabled={!files.source || !files.destination || !files.mapping || uploading}
+                                disabled={!files.source || !files.destination || uploading}
                                 className={`px-8 py-3 rounded-md font-medium ${
-                                    !files.source || !files.destination || !files.mapping || uploading
+                                    !files.source || !files.destination || uploading
                                         ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
                                         : 'bg-blue-600 text-white hover:bg-blue-700'
                                 }`}
