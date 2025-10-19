@@ -80,21 +80,67 @@ class ParameterizedFieldMapper:
         return mappings
     
     def validate_files(self) -> Tuple[bool, List[str]]:
-        """Validate that all required files exist."""
+        """Validate that all required files exist and have required sheets."""
         
         errors = []
         
         if not self.source_file.exists():
             errors.append(f"Source file not found: {self.source_file}")
+            return False, errors
         
         if not self.destination_file.exists():
             errors.append(f"Destination file not found: {self.destination_file}")
+            return False, errors
         
         if not self.mapping_file.exists():
             errors.append(f"Mapping file not found: {self.mapping_file}")
+            return False, errors
         
         if self.target_column < 1:
             errors.append(f"Invalid target column: {self.target_column}")
+        
+        # Validate destination file has 'Reported' sheet
+        try:
+            dest_wb = openpyxl.load_workbook(self.destination_file, data_only=False, read_only=True)
+            if 'Reported' not in dest_wb.sheetnames:
+                available_sheets = ", ".join(dest_wb.sheetnames)
+                errors.append(
+                    f"DESTINATION FILE ERROR: Required sheet 'Reported' not found. "
+                    f"Available sheets: [{available_sheets}]. "
+                    f"Please ensure your destination file has a sheet named 'Reported'."
+                )
+            dest_wb.close()
+        except Exception as e:
+            errors.append(f"Failed to validate destination file: {str(e)}")
+        
+        # Validate source file has required sheets from mapping
+        try:
+            source_wb = openpyxl.load_workbook(self.source_file, data_only=True, read_only=True)
+            source_sheets = set(source_wb.sheetnames)
+            
+            # Load mapping to check required source sheets
+            required_sheets = set()
+            with open(self.mapping_file, 'r', encoding='utf-8') as f:
+                import csv
+                reader = csv.DictReader(f)
+                for row in reader:
+                    sheet_name = row.get('Source_Sheet', row.get('Source_Sheet_Name', ''))
+                    if sheet_name:
+                        required_sheets.add(sheet_name)
+            
+            missing_sheets = required_sheets - source_sheets
+            if missing_sheets:
+                available_sheets = ", ".join(sorted(source_sheets))
+                missing_list = ", ".join(sorted(missing_sheets))
+                errors.append(
+                    f"SOURCE FILE ERROR: Required sheet(s) not found: [{missing_list}]. "
+                    f"Available sheets: [{available_sheets}]. "
+                    f"Please ensure your source file has all required sheets."
+                )
+            
+            source_wb.close()
+        except Exception as e:
+            errors.append(f"Failed to validate source file: {str(e)}")
         
         return len(errors) == 0, errors
     
