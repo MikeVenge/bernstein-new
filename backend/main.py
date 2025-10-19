@@ -208,23 +208,65 @@ async def execute_mapping(
             "data_column": data_column
         }
         
-        # For Railway deployment, return simulated results for now
-        # In production, this would run the actual mapping
+        # Create results directory for this job
+        job_results_dir = RESULTS_DIR / job_id
+        job_results_dir.mkdir(exist_ok=True)
+        
+        # Get file paths
+        source_path = job.files['source']['path']
+        destination_path = job.files['destination']['path']
+        mapping_path = job.files['mapping']['path']
+        
+        # Set output paths
+        output_filename = f"populated_{job.files['destination']['filename']}"
+        output_path = job_results_dir / output_filename
+        audit_filename = f"audit_trail_{job_id}.csv"
+        audit_path = job_results_dir / audit_filename
+        
+        # Initialize field mapper
+        mapper = ParameterizedFieldMapper(
+            source_file=source_path,
+            destination_file=destination_path,
+            mapping_file=mapping_path,
+            target_column=target_column,
+            data_column=data_column,
+            output_file=str(output_path),
+            audit_file=str(audit_path)
+        )
+        
+        job.progress = 30
+        
+        # Validate files
+        is_valid, errors = mapper.validate_files()
+        if not is_valid:
+            raise HTTPException(status_code=400, detail=f"Validation failed: {', '.join(errors)}")
+        
+        # Load mappings
+        mappings = mapper.load_mapping_file()
+        job.progress = 50
+        
+        # Execute mapping
+        results = mapper.populate_fields(mappings)
+        job.progress = 80
+        
+        # Generate audit trail
+        mapper.generate_audit_trail(results)
         job.progress = 100
+        
+        # Calculate success rate
+        success_rate = (mapper.stats['values_populated'] / mapper.stats['mappings_processed'] * 100) if mapper.stats['mappings_processed'] > 0 else 0
+        
         job.status = "completed"
         job.result = {
-            "mappings_processed": 134,
-            "values_populated": 130,
-            "success_rate": 97.0,
-            "output_file": f"populated_{job.files['destination']['filename']}",
-            "audit_file": f"audit_trail_{job_id}.csv",
-            "sheet_stats": {
-                "Key Metrics": 37,
-                "Balance Sheet": 39,
-                "Income Statement": 24,
-                "Cash Flows": 30
-            },
-            "errors": []
+            "mappings_processed": mapper.stats['mappings_processed'],
+            "values_populated": mapper.stats['values_populated'],
+            "success_rate": round(success_rate, 1),
+            "output_file": output_filename,
+            "audit_file": audit_filename,
+            "output_path": str(output_path),
+            "audit_path": str(audit_path),
+            "sheet_stats": mapper.stats.get('sheet_stats', {}),
+            "errors": mapper.stats.get('errors', [])
         }
         
         return {
@@ -271,14 +313,38 @@ async def download_result(job_id: str, file_type: str):
     if job.status != "completed":
         raise HTTPException(status_code=400, detail="Job not completed yet")
     
-    # For Railway deployment, return download info
-    return {
-        "message": f"Download {file_type} for job {job_id}",
-        "filename": job.result["output_file"] if file_type == "excel" else job.result["audit_file"],
-        "note": "Railway deployment - simulated download",
-        "job_id": job_id,
-        "file_type": file_type
-    }
+    # Determine file path based on type
+    if file_type == "excel":
+        file_path = job.result.get("output_path")
+        filename = job.result.get("output_file")
+        media_type = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    elif file_type == "audit":
+        file_path = job.result.get("audit_path")
+        filename = job.result.get("audit_file")
+        media_type = "text/csv"
+    elif file_type == "all":
+        # Create a zip file with both files
+        import zipfile
+        zip_path = RESULTS_DIR / job_id / f"results_{job_id}.zip"
+        with zipfile.ZipFile(zip_path, 'w') as zipf:
+            if job.result.get("output_path"):
+                zipf.write(job.result["output_path"], job.result["output_file"])
+            if job.result.get("audit_path"):
+                zipf.write(job.result["audit_path"], job.result["audit_file"])
+        file_path = str(zip_path)
+        filename = f"results_{job_id}.zip"
+        media_type = "application/zip"
+    else:
+        raise HTTPException(status_code=400, detail="Invalid file type")
+    
+    if not file_path or not Path(file_path).exists():
+        raise HTTPException(status_code=404, detail="File not found")
+    
+    return FileResponse(
+        path=file_path,
+        filename=filename,
+        media_type=media_type
+    )
 
 
 if __name__ == "__main__":
