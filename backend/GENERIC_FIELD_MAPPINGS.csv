@@ -83,9 +83,10 @@ Dest_Row,Dest_Field,Dest_Section,Source_Sheet,Source_Row,Source_Field,Source_Col
 155,Total equity,Balance Sheet,Balance Sheet,53,Total equity,CO,Exact_Match,DIRECT_COPY,HIGH,Field_Names,Exact field name match
 156,Total equity and liabilities,Balance Sheet,Balance Sheet,54,Total liabilities and equity,CO,Semantic_Match,DIRECT_COPY,HIGH,Field_Names,Semantic match: order variation in field name
 171,Net income,Cash Flow Statement,Cash Flows,6,Net income (loss),CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: Net income → Net income (loss)
-173,Depreciation and amortization,Cash Flow Statement,Key Metrics,47,Medium-power CW lasers (Less Than 1 Kilowatt),CO,Manual_Match,DIRECT_COPY,HIGH,Historical_Data,Manual mapping - depreciation matched to product line
+173,Depreciation and amortization,Cash Flow Statement,Cash Flows,8,Depreciation and amortization,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match - corrected from Key Metrics to Cash Flows
 174,Deferred income taxes,Cash Flow Statement,Cash Flows,11,Deferred income taxes,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
 175,Stock-based compensation,Cash Flow Statement,Cash Flows,12,Stock-based compensation,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+176,Unrealized losses (gains) on foreign currency transactions,Cash Flow Statement,Cash Flows,13,Unrealized (gains) losses on foreign currency transactions,CO,Semantic_Match,DIRECT_COPY,HIGH,Historical_Data,Semantic match: Unrealized losses (gains) → Unrealized (gains) losses
 177,Other,Cash Flow Statement,Cash Flows,15,Other,CO,Exact_Match,DIRECT_COPY,HIGH,Field_Names,Exact field name match
 178,Provisions for inventory warranty and bad debt,Cash Flow Statement,Cash Flows,16,Provisions for inventory warranty & bad debt,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
 180,Accounts receivable,Cash Flow Statement,Cash Flows,18,Accounts receivable,CO,Exact_Match,DIRECT_COPY,HIGH,Field_Names,Exact field name match
