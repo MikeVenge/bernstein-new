@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
 const FileUpload = ({ onFilesUploaded }) => {
   const [files, setFiles] = useState({
@@ -78,7 +79,7 @@ const FileUpload = ({ onFilesUploaded }) => {
       formData.append('destination_file', files.destination);
       formData.append('mapping_file', files.mapping);
 
-      const response = await axios.post('/api/upload-files', formData, {
+      const response = await axios.post(`${API_URL}/api/upload-files`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

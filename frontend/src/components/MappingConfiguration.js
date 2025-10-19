@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
 const MappingConfiguration = ({ uploadedFiles, onConfigurationSet, jobId }) => {
   const [config, setConfig] = useState({
@@ -16,7 +17,7 @@ const MappingConfiguration = ({ uploadedFiles, onConfigurationSet, jobId }) => {
   const loadMappingPreview = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`/api/mapping-preview/${jobId}`);
+      const response = await axios.get(`${API_URL}/api/mapping-preview/${jobId}`);
       setMappingPreview(response.data);
     } catch (err) {
       console.error('Failed to load mapping preview:', err);
