@@ -26,7 +26,7 @@ Dest_Row,Dest_Field,Dest_Section,Source_Sheet,Source_Row,Source_Field,Source_Col
 54,Rest of World,Segment Information,Key Metrics,22,Rest of World,CO,Exact_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Exact field name match - percentage format
 55,Total,Segment Information,Key Metrics,23,Total revenue,CO,Semantic_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Total field mapping - percentage format
 58,Materials Processing,Segment Information,Key Metrics,34,Materials processing,CO,Exact_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Exact field name match - percentage format
-59,Other application of which,Segment Information,Balance Sheet,44,Common stock,CO,Manual_Match,PERCENTAGE_VALUE,MEDIUM,Field_Names,Manual mapping - Other application mapped to Common stock from Balance Sheet
+59,Other application of which,Segment Information,Key Metrics,39,Other applications,CO,Semantic_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Semantic match: Other application of which → Other applications
 63,Total,Segment Information,Key Metrics,43,Total revenue,CO,Semantic_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Total field mapping - percentage format
 66,High-power CW lasers (1 Kilowatt or Greater),Segment Information,Key Metrics,55,High-power CW lasers (1 Kilowatt or Greater),CO,Exact_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Exact field name match - percentage format
 67,Medium-power CW lasers (Less Than 1 Kilowatt),Segment Information,Key Metrics,56,Medium-power CW lasers (Less Than 1 Kilowatt),CO,Exact_Match,PERCENTAGE_VALUE,HIGH,Historical_Data,Exact field name match - percentage format
