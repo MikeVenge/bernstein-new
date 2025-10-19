@@ -227,6 +227,20 @@
                     return letters[first] + letters[second];
                 };
 
+                // Column name mappings (common quarterly data columns)
+                const getColumnName = (colRef) => {
+                    const columnNames = {
+                        'BR': 'Q1 2023',
+                        'BS': 'Q2 2023', 
+                        'BT': 'Q3 2023',
+                        'BU': 'Q4 2023',
+                        'BW': 'Q1 2024',
+                        'CB': 'Q2 2024',
+                        'CO': 'Q2 2024'
+                    };
+                    return columnNames[colRef] || '';
+                };
+
                 const handleConfigChange = (field, value) => {
                     setMappingConfig(prev => ({ ...prev, [field]: value }));
                 };
@@ -274,10 +288,10 @@
                                     onChange={(e) => handleConfigChange('dataColumn', e.target.value)}
                                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 >
-                                    <option value="BR">BR (Column 70)</option>
-                                    <option value="BS">BS (Column 71)</option>
-                                    <option value="CO">CO (Column 93)</option>
-                                    <option value="BT">BT (Column 72)</option>
+                                    <option value="BR">BR (Column 70) - {getColumnName('BR')}</option>
+                                    <option value="BS">BS (Column 71) - {getColumnName('BS')}</option>
+                                    <option value="CO">CO (Column 93) - {getColumnName('CO')}</option>
+                                    <option value="BT">BT (Column 72) - {getColumnName('BT')}</option>
                                 </select>
                                 <p className="text-xs text-gray-500 mt-1">Where to read data from source file</p>
                             </div>
@@ -291,12 +305,12 @@
                                     onChange={(e) => handleConfigChange('targetColumn', parseInt(e.target.value))}
                                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 >
-                                    <option value={70}>{getColumnLetter(70)} (Column 70)</option>
-                                    <option value={71}>{getColumnLetter(71)} (Column 71)</option>
-                                    <option value={72}>{getColumnLetter(72)} (Column 72)</option>
-                                    <option value={73}>{getColumnLetter(73)} (Column 73)</option>
-                                    <option value={75}>{getColumnLetter(75)} (Column 75)</option>
-                                    <option value={80}>{getColumnLetter(80)} (Column 80)</option>
+                                    <option value={70}>{getColumnLetter(70)} (Column 70) - {getColumnName('BR')}</option>
+                                    <option value={71}>{getColumnLetter(71)} (Column 71) - {getColumnName('BS')}</option>
+                                    <option value={72}>{getColumnLetter(72)} (Column 72) - {getColumnName('BT')}</option>
+                                    <option value={73}>{getColumnLetter(73)} (Column 73) - {getColumnName('BU')}</option>
+                                    <option value={75}>{getColumnLetter(75)} (Column 75) - {getColumnName('BW')}</option>
+                                    <option value={80}>{getColumnLetter(80)} (Column 80) - {getColumnName('CB')}</option>
                                 </select>
                                 <p className="text-xs text-gray-500 mt-1">Where to write data in destination file</p>
                             </div>
