@@ -15,6 +15,9 @@
 
     <script type="text/babel">
         const { useState, useCallback } = React;
+        
+        // Backend API URL - Railway deployment
+        const API_URL = 'https://backend-production-a33c.up.railway.app';
 
         function App() {
             const [currentStep, setCurrentStep] = useState(1);
@@ -31,16 +34,17 @@
             React.useEffect(() => {
                 const checkBackend = async () => {
                     try {
-                        // Use relative URL for API calls (Vercel will proxy)
-                        await axios.get('/api/health');
+                        // Direct Railway URL with health check
+                        await axios.get(`${API_URL}/api/health`);
                         setBackendStatus('connected');
                     } catch (err) {
                         try {
-                            // Fallback: try direct Railway URL
-                            await axios.get('https://backend-production-a33c.up.railway.app/');
+                            // Fallback: try root endpoint
+                            await axios.get(`${API_URL}/`);
                             setBackendStatus('connected');
                         } catch (err2) {
                             setBackendStatus('disconnected');
+                            console.error('Backend connection failed:', err2);
                         }
                     }
                 };
@@ -79,8 +83,8 @@
                         formData.append('destination_file', files.destination);
                         formData.append('mapping_file', files.mapping);
 
-                        // Use relative URL - Vercel will proxy to Railway
-                        const response = await axios.post('/api/upload-files', formData, {
+                        // Direct Railway backend URL
+                        const response = await axios.post(`${API_URL}/api/upload-files`, formData, {
                             headers: {
                                 'Content-Type': 'multipart/form-data',
                             },
@@ -206,8 +210,8 @@
                         formData.append('target_column', mappingConfig.targetColumn.toString());
                         formData.append('data_column', mappingConfig.dataColumn);
 
-                        // Use relative URL - Vercel will proxy to Railway
-                        const response = await axios.post(`/api/execute-mapping/${jobId}`, formData);
+                        // Direct Railway backend URL
+                        const response = await axios.post(`${API_URL}/api/execute-mapping/${jobId}`, formData);
 
                         if (response.data.status === 'success') {
                             setResult(response.data.result);
@@ -321,8 +325,8 @@
             const ResultsDisplay = () => {
                 const downloadFile = async (fileType) => {
                     try {
-                        // Use relative URL - Vercel will proxy to Railway
-                        const response = await axios.get(`/api/download-result/${jobId}/${fileType}`, {
+                        // Direct Railway backend URL
+                        const response = await axios.get(`${API_URL}/api/download-result/${jobId}/${fileType}`, {
                             responseType: 'blob'
                         });
 

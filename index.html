@@ -15,6 +15,9 @@
 
     <script type="text/babel">
         const { useState } = React;
+        
+        // Backend API URL - Railway deployment
+        const API_URL = 'https://backend-production-a33c.up.railway.app';
 
         function App() {
             const [backendStatus, setBackendStatus] = useState('checking');
@@ -22,10 +25,16 @@
             React.useEffect(() => {
                 const checkBackend = async () => {
                     try {
-                        await axios.get('/api/health');
+                        await axios.get(`${API_URL}/api/health`);
                         setBackendStatus('connected');
                     } catch (err) {
-                        setBackendStatus('disconnected');
+                        try {
+                            await axios.get(`${API_URL}/`);
+                            setBackendStatus('connected');
+                        } catch (err2) {
+                            setBackendStatus('disconnected');
+                            console.error('Backend connection failed:', err2);
+                        }
                     }
                 };
                 checkBackend();
