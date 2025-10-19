@@ -105,9 +105,13 @@ class ParameterizedFieldMapper:
             if 'Reported' not in dest_wb.sheetnames:
                 available_sheets = ", ".join(dest_wb.sheetnames)
                 errors.append(
-                    f"DESTINATION FILE ERROR: Required sheet 'Reported' not found. "
-                    f"Available sheets: [{available_sheets}]. "
-                    f"Please ensure your destination file has a sheet named 'Reported'."
+                    f"❌ DESTINATION FILE ERROR: Required sheet 'Reported' not found.\n\n"
+                    f"📋 Available sheets in your file: [{available_sheets}]\n\n"
+                    f"💡 SOLUTION:\n"
+                    f"   • Double-check that you uploaded the correct DESTINATION file\n"
+                    f"   • The destination file must contain a sheet named 'Reported'\n"
+                    f"   • If you uploaded the wrong file, click 'Back' and upload the correct one\n"
+                    f"   • Make sure you didn't swap the source and destination files"
                 )
             dest_wb.close()
         except Exception as e:
@@ -133,9 +137,15 @@ class ParameterizedFieldMapper:
                 available_sheets = ", ".join(sorted(source_sheets))
                 missing_list = ", ".join(sorted(missing_sheets))
                 errors.append(
-                    f"SOURCE FILE ERROR: Required sheet(s) not found: [{missing_list}]. "
-                    f"Available sheets: [{available_sheets}]. "
-                    f"Please ensure your source file has all required sheets."
+                    f"❌ SOURCE FILE ERROR: Required sheet(s) not found: [{missing_list}]\n\n"
+                    f"📋 Available sheets in your file: [{available_sheets}]\n"
+                    f"📋 Required sheets for IPG Photonics: [Key Metrics, Income Statement, Balance Sheet, Cash Flows]\n\n"
+                    f"💡 SOLUTION:\n"
+                    f"   • Double-check that you uploaded the correct SOURCE file\n"
+                    f"   • The source file must contain all required sheets listed above\n"
+                    f"   • If you uploaded the wrong file, click 'Back' and upload the correct one\n"
+                    f"   • Make sure you didn't swap the source and destination files\n"
+                    f"   • Verify the file is the complete quarterly earnings workbook"
                 )
             
             source_wb.close()
