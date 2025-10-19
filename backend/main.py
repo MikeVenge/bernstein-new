@@ -75,11 +75,11 @@ app = FastAPI(
     description=app_config.get("description", "Field mapping API")
 )
 
-# Enable CORS
+# Enable CORS - Allow all origins for now
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=cors_origins,
-    allow_credentials=True,
+    allow_origins=["*"],  # Allow all origins
+    allow_credentials=False,  # Set to False when using wildcard origins
     allow_methods=["*"],
     allow_headers=["*"],
 )
