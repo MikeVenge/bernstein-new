@@ -218,6 +218,15 @@
                 const [result, setResult] = useState(null);
                 const [error, setError] = useState(null);
 
+                // Helper function to get column letter from number
+                const getColumnLetter = (colNum) => {
+                    const letters = ['', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+                    if (colNum <= 26) return letters[colNum];
+                    const first = Math.floor((colNum - 1) / 26);
+                    const second = ((colNum - 1) % 26) + 1;
+                    return letters[first] + letters[second];
+                };
+
                 const handleConfigChange = (field, value) => {
                     setMappingConfig(prev => ({ ...prev, [field]: value }));
                 };
@@ -265,12 +274,12 @@
                                     onChange={(e) => handleConfigChange('targetColumn', parseInt(e.target.value))}
                                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 >
-                                    <option value={70}>Column 70 (BR)</option>
-                                    <option value={71}>Column 71 (BS)</option>
-                                    <option value={72}>Column 72 (BT)</option>
-                                    <option value={73}>Column 73 (BU)</option>
-                                    <option value={75}>Column 75 (BW)</option>
-                                    <option value={80}>Column 80 (CB)</option>
+                                    <option value={70}>{getColumnLetter(70)} (Column 70)</option>
+                                    <option value={71}>{getColumnLetter(71)} (Column 71)</option>
+                                    <option value={72}>{getColumnLetter(72)} (Column 72)</option>
+                                    <option value={73}>{getColumnLetter(73)} (Column 73)</option>
+                                    <option value={75}>{getColumnLetter(75)} (Column 75)</option>
+                                    <option value={80}>{getColumnLetter(80)} (Column 80)</option>
                                 </select>
                                 <p className="text-xs text-gray-500 mt-1">Where to write data in destination file</p>
                             </div>
@@ -284,12 +293,26 @@
                                     onChange={(e) => handleConfigChange('dataColumn', e.target.value)}
                                     className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                                 >
-                                    <option value="BR">BR (Column 70) - Q1 data</option>
-                                    <option value="BS">BS (Column 71) - Q2 data</option>
-                                    <option value="CO">CO (Column 93) - Current default</option>
+                                    <option value="BR">BR (Column 70)</option>
+                                    <option value="BS">BS (Column 71)</option>
+                                    <option value="CO">CO (Column 93)</option>
                                     <option value="BT">BT (Column 72)</option>
                                 </select>
                                 <p className="text-xs text-gray-500 mt-1">Where to read data from source file</p>
+                            </div>
+                        </div>
+
+                        {/* Display mapping file info */}
+                        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+                            <div className="flex items-center justify-between">
+                                <div>
+                                    <p className="text-sm font-medium text-gray-700">Mapping Template:</p>
+                                    <p className="text-sm text-gray-900 mt-1">{uploadedFiles.mapping?.label || 'Unknown'}</p>
+                                </div>
+                                <div className="text-right">
+                                    <p className="text-xs text-gray-500">Mapping File:</p>
+                                    <p className="text-xs text-gray-600 mt-1">{uploadedFiles.mapping?.filename || 'N/A'}</p>
+                                </div>
                             </div>
                         </div>
 
