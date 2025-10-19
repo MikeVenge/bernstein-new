@@ -75,6 +75,7 @@ Dest_Row,Dest_Field,Dest_Section,Source_Sheet,Source_Row,Source_Field,Source_Col
 144,Deferred income taxes and other non-current liabilities,Balance Sheet,Balance Sheet,37,Other long-term liabilities and deferred income taxes,CO,Semantic_Match,DIRECT_COPY,MEDIUM,Field_Names,Semantic match: deferred income taxes variations
 145,Long-term debt net of current portion,Balance Sheet,Balance Sheet,38,Long-term debt net of current portion,CO,Exact_Match,DIRECT_COPY,HIGH,Field_Names,Exact field name match
 146,Total liabilities,Balance Sheet,Balance Sheet,39,Total Liabilities,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
+148,IPG Photonics Corporation equity,Balance Sheet,Balance Sheet,44,Common stock,CO,Semantic_Match,DIRECT_COPY,MEDIUM,Field_Names,Semantic match: IPG Photonics Corporation equity → Common stock
 149,Treasury stock at cost,Balance Sheet,Balance Sheet,45,Treasury stock at cost,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
 150,Additional paid-in capital,Balance Sheet,Balance Sheet,46,Additional paid-in capital,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
 151,Retained earnings,Balance Sheet,Balance Sheet,48,Retained earnings,CO,Exact_Match,DIRECT_COPY,HIGH,Historical_Data,Exact field name match
